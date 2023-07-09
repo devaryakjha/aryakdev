@@ -1,0 +1,15 @@
+.main {
+  @apply bg-primary w-full h-full bg-coming-soon p-24;
+}
+
+.title {
+  @apply text-white text-[11.25rem] font-bold tracking-tightest;
+}
+
+.cube {
+  @apply h-[28.125rem] fixed bg-no-repeat right-32 bottom-32;
+}
+
+.balls {
+  @apply fixed bg-no-repeat right-10 top-10;
+}
