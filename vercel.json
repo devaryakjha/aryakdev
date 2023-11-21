@@ -1,9 +1,12 @@
 {
   "rewrites": [
-    { "source": "/varanasi", "destination": "https://saavn.aryak.dev/" },
     {
-      "source": "/varanasi/:match",
-      "destination": "https://saavn.aryak.dev/:match"
+      "source": "/api/varanasi",
+      "destination": "https://varanasi-backend.vercel.app/"
+    },
+    {
+      "source": "/api/varanasi/:match",
+      "destination": "https://varanasi-backend.vercel.app/:match"
     }
   ]
 }
