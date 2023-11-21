@@ -1,6 +1,6 @@
 {
   "rewrites": [
-    { "source": "/varanasi/", "destination": "https://saavn.aryak.dev/" },
+    { "source": "/varanasi", "destination": "https://saavn.aryak.dev/" },
     {
       "source": "/varanasi/:match",
       "destination": "https://saavn.aryak.dev/:match"
