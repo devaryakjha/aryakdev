@@ -5,12 +5,8 @@
       "destination": "https://varanasi-backend.vercel.app/"
     },
     {
-      "source": "/api/varanasi/:match",
-      "destination": "https://varanasi-backend.vercel.app/:match"
-    },
-    {
-      "source": "/api/varanasi/:match/:match2",
-      "destination": "https://varanasi-backend.vercel.app/:match/:match2"
+      "source": "/api/varanasi/:match*",
+      "destination": "https://varanasi-backend.vercel.app/:match*"
     }
   ]
 }
