@@ -7,6 +7,14 @@
     {
       "source": "/api/varanasi/:match*",
       "destination": "https://varanasi-backend.vercel.app/:match*"
+    },
+    {
+      "source": "/shrtm",
+      "destination": "https://url-shortener-devaryakjha.vercel.app/"
+    },
+    {
+      "source": "/shrtm/:match*",
+      "destination": "https://url-shortener-devaryakjha.vercel.app/:match*"
     }
   ]
 }
