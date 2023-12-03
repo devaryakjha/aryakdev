@@ -15,6 +15,14 @@
     {
       "source": "/shrtm/:match*",
       "destination": "https://url-shortener-devaryakjha.vercel.app/:match*"
+    },
+    {
+      "source": "/collaborate-tube",
+      "destination": "https://collaborate-tube-backend.vercel.app/"
+    },
+    {
+      "source": "/collaborate-tube/:match*",
+      "destination": "https://collaborate-tube-backend.vercel.app/:match*"
     }
   ]
 }
