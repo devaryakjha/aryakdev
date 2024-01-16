@@ -10,12 +10,8 @@ module.exports = {
       letterSpacing: {
         tightest: "-0.45rem",
       },
-      backgroundImage: {
-        "coming-soon": 'url("/images/bg.png")',
-        cubes: "url('/images/cubes.png')",
-      },
       backgroundColor: {
-        primary: "#1D252C",
+        primary: "#000000",
       },
     },
   },
