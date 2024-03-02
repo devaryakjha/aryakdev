@@ -12,7 +12,6 @@ const url =
     : process.env.VERCEL_ENV === "preview"
     ? `https://${process.env.VERCEL_URL}`
     : "http://localhost:3000";
-const unsecuredUrl = url.replace("https://", "http://");
 
 const metadata: Metadata = {
   title,
@@ -26,10 +25,6 @@ const metadata: Metadata = {
     siteName: applicationName,
     countryName: "India",
     locale: "en_IN",
-    images: {
-      url: `${unsecuredUrl}/images/og-image.png`,
-      secureUrl: `${url}/images/og-image.png`,
-    },
   },
 };
 
