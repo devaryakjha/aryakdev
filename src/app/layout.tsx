@@ -1,23 +1,21 @@
+import NavBar from "@/components/NavBar/NavBar";
 import "./globals.css";
-import type { Metadata } from "next";
-import { Outfit } from "next/font/google";
+import font from "@/utils/font";
+import seoMetadata from "@/utils/seo/metadata";
 
-const inter = Outfit({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: "Aryakumar Jha",
-  description:
-    "Experienced Flutter Developer with a Track Record of Delivering Innovative Cross-Platform Mobile Solutions",
-};
+export const metadata = seoMetadata;
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={font.className}>
+        <NavBar />
+        {children}
+      </body>
     </html>
   );
 }

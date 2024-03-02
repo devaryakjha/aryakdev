@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --spacing-100: 0.25rem;
+    --spacing-200: 0.5rem;
+    --spacing-250: 0.75rem;
+    --spacing-300: 1rem;
+    --spacing-350: 1.5rem;
+    --spacing-400: 2rem;
+    --spacing-425: 2.5rem;
+    --spacing-450: 3rem;
+    --spacing-500: 4rem;
+    --spacing-600: 8rem;
+    --spacing-625: 10rem;
+}
+
 body {
-  @apply bg-primary w-screen h-screen;
+    @apply mx-[var(--spacing-600)] antialiased;
 }
