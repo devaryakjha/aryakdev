@@ -1,3 +1,7 @@
+.base {
+  @apply text-primary;
+}
+
 /* Variant Classess */
 .special {
   @apply text-[4rem] leading-[84px] font-bold;

@@ -3,19 +3,23 @@
 @tailwind utilities;
 
 :root {
-    --spacing-100: 0.25rem;
-    --spacing-200: 0.5rem;
-    --spacing-250: 0.75rem;
-    --spacing-300: 1rem;
-    --spacing-350: 1.5rem;
-    --spacing-400: 2rem;
-    --spacing-425: 2.5rem;
-    --spacing-450: 3rem;
-    --spacing-500: 4rem;
-    --spacing-600: 8rem;
-    --spacing-625: 10rem;
+  --bg-color: #ffffff;
+  --color-text-primary: #121212;
+  --color-text-secondary: #2a2a2a;
+  --color-text-tertiary: #717171;
+  --color-text-link: #485bff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #121212;
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #d0d0d0;
+    --color-text-tertiary: #a0a0a0;
+    --color-text-link: #b6bdff;
+  }
 }
 
 body {
-    @apply mx-[var(--spacing-600)] antialiased;
+  @apply mx-600 antialiased bg-page;
 }
