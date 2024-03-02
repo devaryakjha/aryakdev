@@ -14,6 +14,10 @@ const url =
     : "http://localhost:3000";
 
 const metadata: Metadata = {
+  metadataBase: new URL(url),
+  alternates: {
+    canonical: "/",
+  },
   title,
   description,
   keywords,
@@ -21,10 +25,11 @@ const metadata: Metadata = {
   openGraph: {
     title,
     description,
-    url,
+    url: "/",
     siteName: applicationName,
     countryName: "India",
     locale: "en_IN",
+    type: "website",
   },
 };
 
