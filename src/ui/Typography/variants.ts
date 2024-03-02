@@ -1,5 +1,5 @@
 import styles from "./Typography.module.css";
-import { VariantProps, cva } from "cva";
+import { VariantProps, cva } from "class-variance-authority";
 
 export const typographyVariants = cva(styles.base, {
   variants: {
