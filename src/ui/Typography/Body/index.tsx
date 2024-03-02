@@ -8,17 +8,13 @@ interface BodyProps
     Omit<TypographyProps, "variant"> {}
 
 const Body = ({ className, decoration, weight, ...props }: BodyProps) => {
-  return (
-    <span
-      className={typographyVariants({
-        variant: "body",
-        decoration,
-        weight,
-        className,
-      })}
-      {...props}
-    />
-  );
+  const variantClass = typographyVariants({
+    variant: "body",
+    decoration,
+    weight,
+    className,
+  });
+  return <span className={variantClass} {...props} />;
 };
 
 export default Body;

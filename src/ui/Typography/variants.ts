@@ -26,7 +26,6 @@ export const typographyVariants = cva(styles.base, {
   defaultVariants: {
     variant: "body",
     weight: "regular",
-    decoration: undefined,
   },
 });
 
