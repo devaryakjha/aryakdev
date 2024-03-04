@@ -6,6 +6,13 @@ import Image from "next/image";
 export default function ThemeToggle() {
   const [isLight, setIsLight] = useState(false);
   useEffect(() => {
+    if (localStorage.getItem("theme") === null) {
+      setIsLight(false);
+      localStorage.setItem("theme", "dark");
+      document.documentElement.classList.add("dark");
+      return;
+    }
+
     if (localStorage.getItem("theme") === "dark") {
       document.documentElement.classList.add("dark");
       setIsLight(false);
@@ -13,9 +20,6 @@ export default function ThemeToggle() {
       document.documentElement.classList.remove("dark");
       setIsLight(true);
     }
-    setIsLight(
-      document.documentElement.classList.contains("dark") ? false : true,
-    );
   }, []);
   return (
     <Button
