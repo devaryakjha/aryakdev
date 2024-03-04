@@ -1,0 +1,11 @@
+.navigation {
+    @apply mx-4 my-[9px];
+}
+
+.navigation::disabled {
+    @apply cursor-not-allowed;
+}
+
+.icon {
+    @apply h-[44px] w-[44px] p-[10px];
+}

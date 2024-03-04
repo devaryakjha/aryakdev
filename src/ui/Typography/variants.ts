@@ -1,5 +1,5 @@
 import styles from "./Typography.module.css";
-import { VariantProps, cva } from "class-variance-authority";
+import { type VariantProps, cva } from "class-variance-authority";
 
 export const typographyVariants = cva(styles.base, {
   variants: {
@@ -19,8 +19,8 @@ export const typographyVariants = cva(styles.base, {
       bold: styles.bold,
     },
     decoration: {
-      underline: styles.underline,
-      italic: styles.italic,
+      underline: styles.decoration_underline,
+      italic: styles.decoration_italic,
     },
   },
   defaultVariants: {
