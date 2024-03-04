@@ -1,7 +1,7 @@
 import styles from "./Navbar.module.css";
 import Image from "next/image";
 import Button from "@/ui/Button/button";
-import ThemeToggle from "@/components/AnimatedIcons/ThemeToggle";
+import ThemeToggle from "@/components/ThemeToggle";
 import clsx from "clsx";
 
 export default function NavBar() {
