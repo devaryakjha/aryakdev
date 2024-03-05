@@ -4,7 +4,8 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "dev": "next dev --turbo --experimental-https",
+    "dev": "next dev --turbo -p 3001",
+    "dev:https": "next dev --experimental-https --turbo -p 3001",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
