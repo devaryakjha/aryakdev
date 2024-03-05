@@ -1,0 +1,7 @@
+.intro {
+  @apply h-[540px] w-full;
+}
+
+.map {
+  @apply h-[540px] w-[500px] object-cover z-10;
+}
