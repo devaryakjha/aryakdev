@@ -1,6 +1,6 @@
-import Typography from "@/ui/Typography";
 import styles from "./Button.module.css";
 import { type VariantProps, cva } from "class-variance-authority";
+import { typographyVariants } from "@ui/Typography/variants";
 
 const buttonVariants = cva(styles.base, {
   variants: {
@@ -19,11 +19,14 @@ type ButtonProps = {
   HTMLButtonElement
 >;
 
-const Button = ({ variant, children, ...props }: ButtonProps) => {
-  const className = buttonVariants(variant);
+const Button = ({ variant, children, className, ...props }: ButtonProps) => {
+  const computedClass = typographyVariants({
+    variant: "body",
+    className: buttonVariants({ ...variant, className }),
+  });
   return (
-    <button className={className} {...props}>
-      <Typography.Body>{children}</Typography.Body>
+    <button className={computedClass} {...props}>
+      {children}
     </button>
   );
 };
