@@ -1,3 +1,4 @@
+import { BASE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
 
 const title = "Aryakumar Jha - Software Engineer Portfolio";
@@ -6,18 +7,10 @@ const description =
 const keywords =
   "Software Engineer, Portfolio, Mobile App Development, Web Development, Flutter, React.js, Node.js, Golang, Python, UI/UX Design, Full-stack Development";
 const applicationName = title;
-const url =
-  process.env.VERCEL_ENV === "production"
-    ? "https://aryak.dev"
-    : process.env.VERCEL_ENV === "preview"
-    ? `https://${process.env.VERCEL_URL}`
-    : "http://localhost:3000";
 
 const metadata: Metadata = {
-  metadataBase: new URL(url),
-  alternates: {
-    canonical: "/",
-  },
+  metadataBase: new URL(BASE_URL),
+  alternates: { canonical: "/" },
   title,
   description,
   keywords,
