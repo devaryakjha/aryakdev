@@ -3,7 +3,7 @@ import Button from "@/ui/Button/button";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
-export default function ThemeToggle() {
+export default function ThemeToggler() {
   const [isLight, setIsLight] = useState(false);
   useEffect(() => {
     if (localStorage.getItem("theme") === null) {
