@@ -2,22 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 @layer base {
-    :root {
-        --bg-color: #ffffff;
-        --color-text-primary: #121212;
-        --color-text-secondary: #2a2a2a;
-        --color-text-tertiary: #717171;
-        --color-text-link: #485bff;
-    }
+  :root {
+    --bg-color: #ffffff;
+    --color-text-primary: #121212;
+    --color-text-secondary: #2a2a2a;
+    --color-text-tertiary: #717171;
+    --color-text-link: #485bff;
+  }
 
-    :root[class~="dark"] {
-        --bg-color: #121212;
-        --color-text-primary: #ffffff;
-        --color-text-secondary: #d0d0d0;
-        --color-text-tertiary: #a0a0a0;
-        --color-text-link: #b6bdff;
-    }
-}
-body {
-    @apply mx-600 bg-page antialiased;
+  :root[class~="dark"] {
+    --bg-color: #121212;
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #d0d0d0;
+    --color-text-tertiary: #a0a0a0;
+    --color-text-link: #b6bdff;
+  }
+
+  body {
+    @apply px-600 bg-page antialiased text-primary h-svh flex flex-col;
+  }
+
+  body * {
+    @apply transition-colors duration-200;
+  }
 }
