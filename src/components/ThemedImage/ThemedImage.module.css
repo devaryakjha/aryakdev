@@ -1,0 +1,7 @@
+.darkSrc {
+  @apply hidden dark:block;
+}
+
+.lightSrc {
+  @apply block dark:hidden;
+}

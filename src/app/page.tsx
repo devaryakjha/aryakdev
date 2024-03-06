@@ -1,14 +1,14 @@
+import ThemedImage from "@/components/ThemedImage";
 import styles from "./page.module.css";
-import Image from "next/image";
 
 export default function Home() {
   return (
     <main>
       <section className={styles.intro}>
-        <Image
-          src="/images/map_light.svg"
-          width={500}
-          height={540}
+        <ThemedImage
+          lightSrc="/images/map_light.svg"
+          darkSrc="/images/map_dark.svg"
+          fill
           alt="India map"
           className={styles.map}
         />

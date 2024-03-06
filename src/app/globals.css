@@ -19,7 +19,7 @@
   }
 
   body {
-    @apply px-600 bg-page antialiased text-primary h-svh flex flex-col;
+    @apply px-600 bg-page antialiased text-primary h-full;
   }
 
   body * {
