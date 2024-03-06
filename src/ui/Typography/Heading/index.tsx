@@ -9,6 +9,7 @@ interface HeadingProps
     >,
     Omit<TypographyProps, "variant"> {
   size?: HeadingSize;
+  responsive?: boolean;
 }
 
 const Heading = ({

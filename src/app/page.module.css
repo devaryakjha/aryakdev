@@ -1,7 +1,0 @@
-.intro {
-    @apply h-[540px] w-full;
-}
-
-.map {
-    @apply pointer-events-none;
-}

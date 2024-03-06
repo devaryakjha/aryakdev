@@ -27,6 +27,7 @@ export const typographyVariants = cva(styles.base, {
     variant: "body",
     weight: "regular",
   },
+  compoundVariants: [],
 });
 
 export interface TypographyProps

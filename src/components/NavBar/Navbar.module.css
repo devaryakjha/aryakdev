@@ -1,15 +1,15 @@
 .nav {
-  @apply flex h-28 w-full items-center justify-between;
+    @apply flex h-28 w-full items-center justify-between;
 }
 
 .logo {
-  @apply h-16 w-16;
+    @apply h-12 w-12 md:h-16 md:w-16;
 }
 
 .navlist {
-  @apply flex items-center;
+    @apply flex items-center;
 }
 
 .themeToggle {
-  @apply ml-8;
+    @apply ml-8;
 }
