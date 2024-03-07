@@ -6,14 +6,13 @@ import ProjectCard from "@/components/Home/ProjectCard";
 
 export default function Projects() {
   return (
-    <section className={styles.projects}>
+    <section className={styles.projects} id="projects">
       <div className={styles.body}>
         <Heading weight="medium" size="h1">
           Projects
         </Heading>
         <SubHeading className={styles.subheading}>
-          I’ve worked with start-ups and small companies, also I’ve created some
-          concepts for my personal side projects.
+          {"Some of the projects I've worked on recently."}
         </SubHeading>
       </div>
       <ul>

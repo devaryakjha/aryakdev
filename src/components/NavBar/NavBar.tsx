@@ -20,15 +20,15 @@ export default function NavBar() {
       </a>
       <ul className={styles.navlist}>
         <li className={styles.navitem} key={"/projects"}>
-          <a href="/projects">
+          <a href="#projects">
             <Button variant={{ variant: "navigation" }}>Projects</Button>
           </a>
         </li>
-        <li className={styles.navitem} key={"/blog"}>
-          <a href="/blog">
+        {/* <li className={styles.navitem} key={"/blog"}>
+          <a href="#blog">
             <Button variant={{ variant: "navigation" }}>Blog</Button>
           </a>
-        </li>
+        </li> */}
         <li
           className={clsx(styles.navitem, styles.themeToggle)}
           key={"theme-toggle"}

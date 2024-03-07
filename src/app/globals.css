@@ -19,6 +19,10 @@
         --color-text-link: #b6bdff;
     }
 
+    html {
+        @apply scroll-smooth;
+    }
+
     body {
         @apply px-300 md:px-500 lg:px-600 bg-page text-primary h-full antialiased;
     }

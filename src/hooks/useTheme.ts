@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
+import { useShallow } from "zustand/react/shallow";
 
 type ThemeMode = "light" | "dark";
 
@@ -27,26 +28,19 @@ const useThemeStore = create<ThemeStore>()(
  * Custom hook to get and set the theme mode
  */
 const useTheme = () => {
-  const theme = useThemeStore((state) => state.theme);
+  const theme = useThemeStore(useShallow((state) => state.theme));
   const toggleTheme = useThemeStore((state) => () => {
     const newTheme = theme === "light" ? "dark" : "light";
     state.setTheme(newTheme);
-    const classes = document.documentElement.classList;
-    if (newTheme === "dark") {
-      classes.add("dark");
-    } else {
-      classes.remove("dark");
-    }
   });
   useEffect(() => {
     const classes = document.documentElement.classList;
-    console.log({ theme });
     if (theme === "dark") {
       classes.add("dark");
     } else {
       classes.remove("dark");
     }
-  }, []);
+  }, [theme]);
   return { theme, toggleTheme };
 };
 
