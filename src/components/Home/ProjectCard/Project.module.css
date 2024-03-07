@@ -1,0 +1,15 @@
+.card {
+    @apply flex h-[630px] gap-[96px] py-10;
+}
+
+.content {
+    @apply flex h-full basis-[50%] flex-col justify-center;
+}
+
+.description {
+    @apply text-secondary mt-4;
+}
+
+.base {
+    @apply flex h-[550px] w-[550px] flex-col items-center justify-center rounded-2xl;
+}

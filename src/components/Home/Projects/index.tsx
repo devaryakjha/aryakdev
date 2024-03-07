@@ -1,6 +1,8 @@
 import Heading from "@/ui/Typography/Heading";
 import styles from "./Projects.module.css";
 import SubHeading from "@/ui/Typography/SubHeading";
+import { projects } from "@/utils/projects";
+import ProjectCard from "@/components/Home/ProjectCard";
 
 export default function Projects() {
   return (
@@ -14,7 +16,13 @@ export default function Projects() {
           concepts for my personal side projects.
         </SubHeading>
       </div>
-      <span />
+      <ul>
+        {projects.map((project) => (
+          <li key={project.id}>
+            <ProjectCard {...project} />
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }

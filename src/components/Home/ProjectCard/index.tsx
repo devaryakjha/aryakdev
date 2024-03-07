@@ -1,0 +1,33 @@
+import Heading from "@/ui/Typography/Heading";
+import styles from "./Project.module.css";
+import { Project } from "@/utils/projects";
+import Body from "@/ui/Typography/Body";
+import Image from "next/image";
+import clsx from "clsx";
+
+export default function ProjectCard(project: Project) {
+  return (
+    <div className={styles.card}>
+      <div className={styles.content}>
+        <Heading>{project.title}</Heading>
+        <Body className={styles.description}>{project.description}</Body>
+      </div>
+      <a href={project.github} target="_blank">
+        <div
+          className={clsx(styles.base, "group")}
+          style={{
+            backgroundColor: project.color,
+          }}
+        >
+          <Image
+            src={project.image}
+            alt={project.title}
+            width={500}
+            height={500}
+            className="transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+      </a>
+    </div>
+  );
+}

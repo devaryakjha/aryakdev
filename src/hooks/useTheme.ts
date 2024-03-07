@@ -1,4 +1,5 @@
 "use client";
+import { useEffect } from "react";
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 
@@ -37,6 +38,15 @@ const useTheme = () => {
       classes.remove("dark");
     }
   });
+  useEffect(() => {
+    const classes = document.documentElement.classList;
+    console.log({ theme });
+    if (theme === "dark") {
+      classes.add("dark");
+    } else {
+      classes.remove("dark");
+    }
+  }, []);
   return { theme, toggleTheme };
 };
 
