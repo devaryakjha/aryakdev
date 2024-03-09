@@ -1,0 +1,28 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/varanasi",
+      "destination": "https://varanasi-backend.vercel.app/"
+    },
+    {
+      "source": "/api/varanasi/:match*",
+      "destination": "https://varanasi-backend.vercel.app/:match*"
+    },
+    {
+      "source": "/shrtm",
+      "destination": "https://url-shortener-devaryakjha.vercel.app/"
+    },
+    {
+      "source": "/shrtm/:match*",
+      "destination": "https://url-shortener-devaryakjha.vercel.app/:match*"
+    },
+    {
+      "source": "/collaborate-tube",
+      "destination": "https://collaborate-tube-backend.vercel.app/"
+    },
+    {
+      "source": "/collaborate-tube/:match*",
+      "destination": "https://collaborate-tube-backend.vercel.app/:match*"
+    }
+  ]
+}
