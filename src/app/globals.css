@@ -3,27 +3,37 @@
 @tailwind utilities;
 
 @layer base {
-    :root {
-        --bg-color: #ffffff;
-        --color-text-primary: #121212;
-        --color-text-secondary: #2a2a2a;
-        --color-text-tertiary: #717171;
-        --color-text-link: #485bff;
-    }
+  :root {
+    --bg-color: #ffffff;
+    --color-text-primary: #121212;
+    --color-text-secondary: #2a2a2a;
+    --color-text-tertiary: #717171;
+    --color-text-link: #485bff;
+    --palette-gradiant-content: conic-gradient(
+      from 180deg at 50% 50%,
+      rgba(255, 168, 0, 0.5) 0deg,
+      rgba(255, 1, 183, 0.5) 360deg
+    );
+  }
 
-    :root[class~="dark"] {
-        --bg-color: #121212;
-        --color-text-primary: #ffffff;
-        --color-text-secondary: #d0d0d0;
-        --color-text-tertiary: #a0a0a0;
-        --color-text-link: #b6bdff;
-    }
+  :root[class~="dark"] {
+    --bg-color: #121212;
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #d0d0d0;
+    --color-text-tertiary: #a0a0a0;
+    --color-text-link: #b6bdff;
+    --palette-gradiant-content: conic-gradient(
+      from 180deg at 50% 50%,
+      rgba(255, 168, 0, 0.6) 0deg,
+      rgba(255, 0, 184, 0.6) 360deg
+    );
+  }
 
-    html {
-        @apply scroll-smooth;
-    }
+  html {
+    @apply scroll-smooth;
+  }
 
-    body {
-        @apply px-400 md:px-500 lg:px-600 bg-page text-primary h-full antialiased;
-    }
+  body {
+    @apply px-400 md:px-500 lg:px-600 bg-page text-primary h-full antialiased;
+  }
 }
