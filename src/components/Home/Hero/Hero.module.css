@@ -1,7 +1,7 @@
 .hero {
-    @apply pointer-events-none absolute left-0 top-0 flex h-[800px] w-full items-center justify-center;
+    @apply pointer-events-none absolute left-0 top-0 flex h-[550px] w-full items-center justify-center lg:h-[800px];
 }
 
 .content {
-    @apply px-300 md:px-500 lg:px-600 pointer-events-auto z-0 text-balance text-center;
+    @apply px-300 lg:px-500 lg:px-600 pointer-events-auto z-0 text-balance text-center;
 }
