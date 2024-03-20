@@ -6,7 +6,7 @@ import ProjectCard from "@/components/Home/ProjectCard";
 
 export default function Projects() {
   return (
-    <section className={styles.projects}>
+    <section className={styles.projects} id="projects">
       <div className={styles.body}>
         <Heading weight="medium" size="h1">
           Projects
