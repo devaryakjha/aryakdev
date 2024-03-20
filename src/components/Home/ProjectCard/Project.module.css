@@ -15,5 +15,5 @@
 }
 
 .base > img {
-    @apply mx-auto max-h-[500px] max-w-[500px] transition-transform duration-300;
+    @apply m-auto max-h-[500px] max-w-[500px] transition-transform duration-300;
 }
