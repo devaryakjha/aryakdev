@@ -22,8 +22,7 @@ export default function ProjectCard(project: Project) {
           <Image
             src={project.image}
             alt={project.title}
-            width={500}
-            height={500}
+            fill
             className="transition-transform duration-300 group-hover:scale-105"
           />
         </div>

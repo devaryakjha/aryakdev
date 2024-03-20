@@ -24,7 +24,7 @@
     }
 
     body {
-        @apply px-300 md:px-500 lg:px-600 bg-page text-primary h-full antialiased;
+        @apply px-400 md:px-500 lg:px-600 bg-page text-primary h-full antialiased;
     }
 
     body * {

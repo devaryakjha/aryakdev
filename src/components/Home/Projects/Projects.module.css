@@ -1,11 +1,18 @@
 .projects {
-    @apply mt-[700px] flex flex-col gap-[96px] pt-[50px];
+    @apply mt-[350px] flex flex-col pt-[50px] lg:mt-[700px] lg:gap-[96px];
 }
 
 .body {
-    @apply flex items-center justify-center gap-[115px];
+    @apply flex;
+    @apply flex-col lg:flex-row;
+    @apply items-start items-center justify-center;
+    @apply gap-[8px] lg:gap-[115px];
 }
 
 .subheading {
-    @apply text-secondary w-[680px];
+    @apply text-secondary lg:w-[680px];
+}
+
+.list {
+    @apply mt-6;
 }

@@ -1,15 +1,15 @@
 .card {
-    @apply flex h-[630px] gap-[96px] py-10;
+    @apply flex flex-col-reverse gap-[1.5rem] py-10 lg:h-[630px] lg:flex-row lg:gap-[96px];
 }
 
 .content {
-    @apply flex h-full basis-[50%] flex-col justify-center;
+    @apply flex h-full basis-[50%] flex-col items-center justify-center lg:items-start;
 }
 
 .description {
-    @apply text-secondary mt-4;
+    @apply text-secondary mt-4 text-center lg:text-left;
 }
 
 .base {
-    @apply flex h-[550px] w-[550px] flex-col items-center justify-center rounded-2xl;
+    @apply relative mx-auto flex aspect-square max-h-[500px] w-full max-w-[500px] flex-col items-center justify-center rounded-2xl lg:h-[550px] lg:w-[550px];
 }

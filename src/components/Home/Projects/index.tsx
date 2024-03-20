@@ -6,7 +6,7 @@ import ProjectCard from "@/components/Home/ProjectCard";
 
 export default function Projects() {
   return (
-    <section className={styles.projects} id="projects">
+    <section className={styles.projects}>
       <div className={styles.body}>
         <Heading weight="medium" size="h1">
           Projects
@@ -15,7 +15,7 @@ export default function Projects() {
           {"Some of the projects I've worked on recently."}
         </SubHeading>
       </div>
-      <ul>
+      <ul className={styles.list}>
         {projects.map((project) => (
           <li key={project.id}>
             <ProjectCard {...project} />
