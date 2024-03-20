@@ -11,6 +11,7 @@ export default function Hero() {
         fill
         alt="India map"
         className={styles.map}
+        priority
       />
       <Typography.Heading className={styles.content} size="h1">
         Hello, I’m <b>Aryakumar Jha</b>, <b>Software Developer</b> based in{" "}
