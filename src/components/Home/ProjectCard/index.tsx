@@ -15,15 +15,13 @@ export default function ProjectCard(project: Project) {
       <a href={project.github} target="_blank">
         <div
           className={clsx(styles.base, "group")}
-          style={{
-            backgroundColor: project.color,
-          }}
+          style={{ backgroundColor: project.color }}
         >
           <Image
             src={project.image}
             alt={project.title}
             fill
-            className="transition-transform duration-300 group-hover:scale-105"
+            className="group-hover:scale-110"
           />
         </div>
       </a>
