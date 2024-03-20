@@ -1,0 +1,11 @@
+.projects {
+    @apply mt-[700px] flex flex-col gap-[96px] pt-[50px];
+}
+
+.body {
+    @apply flex items-center justify-center gap-[115px];
+}
+
+.subheading {
+    @apply text-secondary w-[680px];
+}

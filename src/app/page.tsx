@@ -1,12 +1,11 @@
-import styles from "./page.module.css";
+import Hero from "@/components/Home/Hero";
+import Projects from "@/components/Home/Projects";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <iframe
-        src="/Aryakumar-Jha.pdf#toolbar=0&view=Fit"
-        className={styles.resume}
-      />
+    <main>
+      <Hero />
+      <Projects />
     </main>
   );
 }

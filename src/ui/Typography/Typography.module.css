@@ -1,0 +1,61 @@
+.base {
+    @apply text-primary;
+}
+
+/* Variant Classess */
+.special {
+    @apply text-[4rem] font-bold leading-[84px];
+}
+
+.heading1 {
+    @apply text-[3rem] leading-[64px];
+}
+
+.heading2 {
+    @apply text-[2.5rem] leading-[54px];
+}
+
+.heading3 {
+    @apply text-[2rem] leading-[44px];
+}
+
+.subheading {
+    @apply text-[1.5rem] leading-[34px];
+}
+
+.body {
+    @apply text-[1.125rem] leading-[28px];
+}
+
+.caption {
+    @apply text-base leading-[26px];
+}
+
+.label {
+    @apply text-sm leading-[24px];
+}
+/*  */
+
+/* Weight Classes */
+.regular {
+    @apply font-normal;
+}
+
+.medium {
+    @apply font-medium;
+}
+
+.bold {
+    @apply font-bold;
+}
+/*  */
+
+/* Decoration classes */
+.decoration_underline {
+    @apply underline;
+}
+
+.decoration_italic {
+    @apply italic;
+}
+/*  */

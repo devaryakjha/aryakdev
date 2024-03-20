@@ -1,5 +1,16 @@
 {
     "files.associations": {
-        "*.css": "tailwindcss"
-    }
+        "*.css": "tailwindcss",
+    },
+    "tailwindCSS.experimental.classRegex": [
+        [
+            "cva\\(([^)]*)\\)",
+            "[\"'`]([^\"'`]*).*?[\"'`]"
+        ],
+        [
+            "cx\\(([^)]*)\\)",
+            "(?:'|\"|`)([^']*)(?:'|\"|`)"
+        ]
+    ],
+    "typescript.tsdk": "node_modules/typescript/lib"
 }
