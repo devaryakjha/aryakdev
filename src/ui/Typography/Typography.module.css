@@ -12,7 +12,7 @@
 }
 
 .heading2 {
-    @apply text-[2.5rem] leading-[54px];
+    @apply text-[2rem] leading-[36px] lg:text-[2.5rem] lg:leading-[54px];
 }
 
 .heading3 {

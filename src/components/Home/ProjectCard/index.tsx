@@ -9,7 +9,7 @@ export default function ProjectCard(project: Project) {
   return (
     <div className={styles.card}>
       <div className={styles.content}>
-        <Heading>{project.title}</Heading>
+        <Heading size="h2">{project.title}</Heading>
         <Body className={styles.description}>{project.description}</Body>
       </div>
       <a href={project.github} target="_blank">
