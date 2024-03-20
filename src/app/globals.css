@@ -26,8 +26,4 @@
     body {
         @apply px-400 md:px-500 lg:px-600 bg-page text-primary h-full antialiased;
     }
-
-    body * {
-        @apply motion-safe:transition-colors motion-safe:duration-200;
-    }
 }
