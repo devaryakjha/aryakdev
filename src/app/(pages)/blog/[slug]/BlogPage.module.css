@@ -1,3 +1,19 @@
 .main {
-  @apply min-h-svh w-full;
+  @apply w-full overflow-hidden;
+}
+
+.blog {
+  @apply @container/blog flex mt-[4rem] justify-between;
+}
+
+.article {
+  @apply basis-2/4 flex flex-col overflow-y-scroll overscroll-y-contain;
+}
+
+.poster {
+  @apply w-full max-w-[450px] aspect-square relative bg-white rounded-lg;
+}
+
+.poster > img {
+  @apply m-auto p-6 transition-transform duration-300;
 }

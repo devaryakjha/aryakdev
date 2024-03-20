@@ -1,0 +1,23 @@
+.sidebar {
+  @apply basis-2/5 flex flex-col;
+}
+
+.info {
+  @apply flex flex-col gap-6;
+}
+
+.title {
+  @apply text-[40px] sticky top-0 font-bold;
+}
+
+.divider {
+  @apply border-[#717171] border-dashed border-t-2;
+}
+
+.details {
+  @apply flex justify-between;
+}
+
+.link {
+  @apply text-base text-link flex gap-3 items-center;
+}
