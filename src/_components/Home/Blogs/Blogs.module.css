@@ -17,7 +17,8 @@
 }
 
 .card {
-  @apply w-[500px] h-[350px] p-[4rem] m-auto flex flex-col gap-[1.5rem];
+  @apply lg:p-[4rem] m-auto flex flex-col gap-[1.5rem];
+  @apply w-full max-w-[500px] aspect-[1.4/1];
   @apply transition-all duration-300 ease-in-out rounded-xl;
   @apply hover:shadow-lg hover:scale-105 cursor-pointer;
 }
