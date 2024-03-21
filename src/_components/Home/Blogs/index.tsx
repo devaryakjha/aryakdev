@@ -20,18 +20,22 @@ export default async function Blogs() {
         <GradientBlur />
         <div className={styles.bloggrid}>
           {blogs.map((blog, index) => (
-            <div key={blog.slug + index.toString()} className={styles.card}>
-              <Typography.Special className={styles.index}>
-                {"0" + (index + 1)}
-              </Typography.Special>
-              <Typography.Heading className={styles.cardTitle}>
-                {blog.shortTitle}
-              </Typography.Heading>
-              <div className={styles.date}>
-                <Typography.Caption>{formatDate(blog.date)}</Typography.Caption>
-                <Link href={`/blog/${blog.slug}`}>Read More</Link>
+            <Link href={`/blog/${blog.slug}`} key={blog.slug}>
+              <div className={styles.card}>
+                <Typography.Special className={styles.index}>
+                  {"0" + (index + 1)}
+                </Typography.Special>
+                <Typography.Heading className={styles.cardTitle}>
+                  {blog.shortTitle}
+                </Typography.Heading>
+                <div className={styles.date}>
+                  <Typography.Caption>
+                    {formatDate(blog.date)}
+                  </Typography.Caption>
+                  <a>Read More</a>
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

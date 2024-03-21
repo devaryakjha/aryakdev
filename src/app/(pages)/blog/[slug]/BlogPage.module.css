@@ -7,7 +7,7 @@
 }
 
 .article {
-  @apply basis-2/4 flex flex-col overflow-y-scroll overscroll-y-contain;
+  @apply basis-2/4 flex flex-col overflow-y-scroll;
   height: calc(100vh - 9rem);
 }
 
