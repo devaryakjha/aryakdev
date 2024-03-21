@@ -6,7 +6,7 @@ import { formatDate } from "@/lib/date";
 
 interface SideBarProps {
   title: string;
-  date: Date;
+  date: string | number | Date;
 }
 
 export default function SideBar(props: SideBarProps) {
