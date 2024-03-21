@@ -11,7 +11,7 @@ const Special = ({ className, decoration, ...props }: SpecialProps) => {
   return (
     <span
       className={typographyVariants({
-        variant: "body",
+        variant: "special",
         decoration,
         weight: "bold",
         className,

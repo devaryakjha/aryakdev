@@ -1,0 +1,7 @@
+.projects {
+  @apply mt-[350px] flex flex-col pt-[50px] lg:mt-[700px] lg:gap-[96px];
+}
+
+.list {
+  @apply mt-6;
+}

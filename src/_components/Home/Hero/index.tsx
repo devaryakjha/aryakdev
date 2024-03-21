@@ -1,6 +1,6 @@
 import styles from "./Hero.module.css";
 import Typography from "@/ui/Typography";
-import ThemedImage from "@/components/ThemedImage";
+import ThemedImage from "@/_components/ThemedImage";
 
 export default function Hero() {
   return (

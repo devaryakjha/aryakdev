@@ -12,7 +12,7 @@ export default function ProjectCard(project: Project) {
         <Heading size="h2">{project.title}</Heading>
         <Body className={styles.description}>{project.description}</Body>
       </div>
-      <a href={project.github} target="_blank">
+      <a href={project.github} target="_blank" rel="noopener noreferrer">
         <div
           className={clsx(styles.base, "group")}
           style={{ backgroundColor: project.color }}

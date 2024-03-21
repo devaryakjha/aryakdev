@@ -1,5 +1,5 @@
 .sidebar {
-  @apply basis-2/5 flex flex-col;
+  @apply lg:basis-2/5 flex flex-col sticky top-0;
 }
 
 .info {
@@ -7,7 +7,7 @@
 }
 
 .title {
-  @apply text-[40px] sticky top-0 font-bold;
+  @apply text-[40px] font-bold;
 }
 
 .divider {

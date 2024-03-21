@@ -2,6 +2,7 @@
 ogTitle: "Welcome to Aryakumar Jha's Tech Blog: A Journey Through Software Engineering"
 excerpt: "Welcome to my corner of the internet! I'm Aryakumar Jha, a passionate software engineer with a love for all things technology-related. Join me on this blogging adventure as we explore the fascinating world of software engineering together."
 title: "Hello World!"
+shortTitle: "Hello World!"
 date: "2024-03-20T23:09:08.706Z"
 posterImage:
   url: "/assets/blogs/hello-world.png"

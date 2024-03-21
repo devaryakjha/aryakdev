@@ -1,0 +1,35 @@
+.blogs {
+  @apply mt-[78px] lg:mt-[206px] pt-[50px] flex flex-col;
+}
+
+.title {
+  @apply pb-[10rem];
+}
+
+.gridContainer {
+  @apply relative;
+  min-height: 380px;
+  max-height: calc(380px * 2);
+}
+
+.bloggrid {
+  @apply absolute inset-0 grid grid-cols-1 gap-4 lg:grid-cols-2 content-baseline mx-auto;
+}
+
+.card {
+  @apply w-[500px] h-[350px] p-[4rem] m-auto flex flex-col gap-[1.5rem];
+  @apply transition-all duration-300 ease-in-out rounded-xl;
+  @apply hover:shadow-lg hover:scale-105 cursor-pointer;
+}
+
+.index {
+  @apply text-[4rem] font-bold;
+}
+
+.date {
+  @apply flex gap-12;
+}
+
+.date > a {
+  @apply underline text-link;
+}
