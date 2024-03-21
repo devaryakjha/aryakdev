@@ -1,4 +1,4 @@
-import NavBar from "@/components/NavBar/NavBar";
+import NavBar from "@/_components/NavBar/NavBar";
 import "./globals.css";
 import font from "@/utils/font";
 import seoMetadata from "@/utils/seo/metadata";

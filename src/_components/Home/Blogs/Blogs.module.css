@@ -1,0 +1,7 @@
+.blogs {
+  @apply mt-[50px];
+}
+
+.title {
+  @apply pb-[16rem];
+}

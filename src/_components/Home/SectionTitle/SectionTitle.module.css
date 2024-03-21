@@ -1,0 +1,10 @@
+.body {
+  @apply flex;
+  @apply flex-col lg:flex-row;
+  @apply items-center justify-center;
+  @apply gap-[8px] lg:gap-[115px];
+}
+
+.subheading {
+  @apply text-secondary lg:w-[680px];
+}

@@ -1,6 +1,6 @@
 import styles from "./Navbar.module.css";
 
-import ThemeToggler from "@/components/ThemeToggle";
+import ThemeToggler from "@/_components/ThemeToggle";
 import clsx from "clsx";
 import NavIcon from "./NavIcon";
 import LinksList from "./LinksList";

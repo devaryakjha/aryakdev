@@ -17,7 +17,7 @@ export default function LinksList() {
         </a>
       </li>
       <li className={styles.navitem} key={"/blog"}>
-        <a href="/blog">
+        <a href="#blogs">
           <Button variant={{ variant: "navigation" }}>Blog</Button>
         </a>
       </li>
