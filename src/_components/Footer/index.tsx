@@ -36,6 +36,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               prefetch={false}
+              aria-label={"Link to " + link.name + " profile"}
             >
               {link.icon}
             </Link>

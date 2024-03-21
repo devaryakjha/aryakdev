@@ -7,7 +7,11 @@ export default function ThemeToggler() {
   const { theme, toggleTheme } = useTheme();
   const isLight = theme === "light";
   return (
-    <Button variant={{ variant: "icon" }} onClick={toggleTheme}>
+    <Button
+      variant={{ variant: "icon" }}
+      onClick={toggleTheme}
+      aria-label="Toggle theme"
+    >
       <Image
         src={isLight ? "/icons/theme/light.svg" : "/icons/theme/dark.svg"}
         alt={isLight ? "light" : "dark"}

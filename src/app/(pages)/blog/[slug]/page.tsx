@@ -41,37 +41,6 @@ export default async function BlogPage({ params }: Params) {
   );
 }
 
-export async function generateMetadata(
-  { params }: Params,
-  parent: ResolvingMetadata
-): Promise<Metadata> {
-  const parentMetadata = await parent;
-  const post = getPostBySlug(params.slug);
-
-  if (!post) {
-    return notFound();
-  }
-
-  const title = `${post.title} | Aryakumar Jha`;
-
-  return {
-    title,
-    description: post.excerpt,
-    keywords: clsx(parentMetadata.keywords, post.tags),
-    openGraph: {
-      tags: post.tags,
-      authors: post.author.name,
-      title,
-      type: "article",
-      publishedTime: post.date,
-      images: `/blog/${post.slug}/og.png`,
-    },
-    twitter: {
-      images: `/blog/${post.slug}/twitter.png`,
-    },
-  };
-}
-
 export function generateStaticParams() {
   const posts = getAllPosts();
 
