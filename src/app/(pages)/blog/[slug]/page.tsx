@@ -64,10 +64,10 @@ export async function generateMetadata(
       title,
       type: "article",
       publishedTime: post.date,
-      images: `blog/${post.slug}/og.png`,
+      images: `/blog/${post.slug}/og.png`,
     },
     twitter: {
-      images: `blog/${post.slug}/twitter.png`,
+      images: `/blog/${post.slug}/twitter.png`,
     },
   };
 }
