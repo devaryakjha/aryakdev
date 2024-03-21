@@ -68,7 +68,7 @@ export async function generateMetadata(
   };
 }
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   const posts = getAllPosts();
 
   return posts.map((post) => ({

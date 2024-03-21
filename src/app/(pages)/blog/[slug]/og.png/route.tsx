@@ -1,19 +1,25 @@
 /* eslint-disable @next/next/no-img-element */
-import { getPostBySlug } from "@/lib/api";
+// [slug]/og.png/route.ts
+
+import { getAllPosts, getPostBySlug } from "@/lib/api";
 import { BASE_URL } from "@/lib/constants";
 import { notFound } from "next/navigation";
 import { ImageResponse } from "next/og";
 
-export const runtime = "nodejs";
-
-export const contentType = "image/png";
-
-export const size = {
+const size = {
   width: 1200,
   height: 630,
 };
 
-export default async function Image({ params }: { params: { slug: string } }) {
+export async function generateStaticParams() {
+  const posts = await getAllPosts();
+
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
+}
+
+export function GET(req: Request, { params }: { params: { slug: string } }) {
   const post = getPostBySlug(params.slug);
 
   if (!post) {
