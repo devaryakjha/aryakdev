@@ -52,7 +52,7 @@ export async function generateMetadata(
     return notFound();
   }
 
-  const title = post.title;
+  const title = `${post.title} | Aryakumar Jha`;
 
   return {
     title,
