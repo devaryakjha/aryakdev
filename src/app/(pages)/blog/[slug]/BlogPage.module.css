@@ -3,7 +3,7 @@
 }
 
 .blog {
-  @apply @container/blog flex mt-[2rem] justify-between;
+  @apply @container/blog flex mt-0 lg:mt-[2rem] justify-between flex-col lg:flex-row gap-6 lg:gap-0;
 }
 
 .article {
