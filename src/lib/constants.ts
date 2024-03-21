@@ -3,4 +3,4 @@ export const BASE_URL =
     ? "https://aryak.dev"
     : process.env.VERCEL_ENV === "preview"
     ? `https://dev.aryak.dev`
-    : "https://localhost:3000";
+    : "http://localhost:3000";

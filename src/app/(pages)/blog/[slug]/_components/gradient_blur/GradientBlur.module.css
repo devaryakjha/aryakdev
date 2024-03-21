@@ -1,0 +1,11 @@
+.div {
+  @apply fixed left-[-60%] w-screen h-[500px] -z-10 max-w-screen-2xl;
+  border-radius: 1535px;
+  background: var(--palette-gradiant-content);
+  filter: blur(250px);
+}
+
+.div2 {
+  @apply fixed inset-0 -z-10 bg-page opacity-70;
+  backdrop-filter: blur(250px);
+}

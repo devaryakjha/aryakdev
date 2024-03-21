@@ -1,0 +1,20 @@
+.main {
+  @apply w-full overflow-hidden;
+}
+
+.blog {
+  @apply @container/blog flex mt-[2rem] justify-between;
+}
+
+.article {
+  @apply basis-2/4 flex flex-col overflow-y-scroll overscroll-y-contain;
+  height: calc(100vh - 9rem);
+}
+
+.poster {
+  @apply w-full max-w-[450px] aspect-square relative bg-transparent rounded-lg flex-shrink-0 overflow-hidden;
+}
+
+.poster > img {
+  @apply m-auto transition-transform duration-300;
+}

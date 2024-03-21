@@ -29,6 +29,8 @@ export function middleware(request: NextRequest) {
     },
   });
 
+  response.headers.set("x-pathname", request.nextUrl.pathname);
+
   if (process.env.VERCEL_ENV === "preview") {
     response.headers.set("x-robots-tag", "noindex");
   }
