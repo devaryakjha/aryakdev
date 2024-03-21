@@ -24,7 +24,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
       <div
         style={{
           fontSize: 48,
-          background: "white",
+          background: post.posterImage.bgColor || "white",
           width: "100%",
           height: "100%",
           display: "flex",
