@@ -62,7 +62,6 @@ export async function generateMetadata(
       tags: post.tags,
       authors: post.author.name,
       title,
-      images: [post.ogImage.url],
       type: "article",
       publishedTime: post.date,
     },
