@@ -28,7 +28,7 @@ export default async function BlogPage({ params }: Params) {
     >
       <div className={clsx(styles.poster, "group")}>
         <Image
-          src={post.posterImage}
+          src={post.posterImage.url}
           alt={post.title}
           fill
           priority

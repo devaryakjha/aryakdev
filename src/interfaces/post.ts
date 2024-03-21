@@ -5,7 +5,10 @@ export type Post = {
   title: string;
   excerpt: string;
   date: string;
-  posterImage: string;
+  posterImage: {
+    url: string;
+    bgColor: string;
+  };
   content: string;
   ogImage: {
     url: string;
