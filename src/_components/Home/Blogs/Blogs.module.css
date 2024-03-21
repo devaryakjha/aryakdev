@@ -1,7 +1,31 @@
 .blogs {
-  @apply mt-[50px];
+  @apply pt-[50px] flex flex-col;
 }
 
 .title {
-  @apply pb-[16rem];
+  @apply pb-[10rem];
+}
+
+.gridContainer {
+  @apply relative;
+}
+
+.bloggrid {
+  @apply absolute inset-0 grid grid-cols-1 gap-4 lg:grid-cols-2 content-baseline mx-auto;
+}
+
+.card {
+  @apply w-[500px] h-[350px] p-[4rem] m-auto flex flex-col gap-[1.5rem];
+}
+
+.index {
+  @apply text-[4rem] font-bold;
+}
+
+.date {
+  @apply flex gap-12;
+}
+
+.date > a {
+  @apply underline text-link;
 }

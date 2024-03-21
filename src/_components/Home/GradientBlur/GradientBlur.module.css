@@ -1,0 +1,11 @@
+.div {
+  @apply absolute w-full h-[250px] -z-10;
+  border-radius: 1535px;
+  background: var(--palette-gradiant-content);
+  filter: blur(200px);
+}
+
+.div2 {
+  @apply absolute bg-page opacity-70 h-[250px];
+  backdrop-filter: blur(150px);
+}
