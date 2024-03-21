@@ -12,9 +12,9 @@
 }
 
 .poster {
-  @apply w-full max-w-[450px] aspect-square relative bg-white rounded-lg flex-shrink-0;
+  @apply w-full max-w-[450px] aspect-square relative bg-transparent rounded-lg flex-shrink-0 overflow-hidden;
 }
 
 .poster > img {
-  @apply m-auto p-6 transition-transform duration-300;
+  @apply m-auto transition-transform duration-300;
 }
