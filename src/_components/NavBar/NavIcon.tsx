@@ -8,7 +8,7 @@ import Button from "@/ui/Button/button";
 export default function NavIcon() {
   const pathname = usePathname();
   return (
-    <Link href="/">
+    <Link href="/" aria-label="Go to home">
       {pathname === "/" ? (
         <Image
           className={styles.logo}
@@ -20,7 +20,7 @@ export default function NavIcon() {
           draggable={false}
         />
       ) : (
-        <Button variant={{ variant: "icon" }}>
+        <Button variant={{ variant: "icon" }} aria-label="Go to home">
           <svg
             width="44"
             height="44"
