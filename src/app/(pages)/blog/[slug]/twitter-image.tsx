@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { getPostBySlug } from "@/lib/api";
+import { BASE_URL } from "@/lib/constants";
 import { notFound } from "next/navigation";
 import { ImageResponse } from "next/og";
 
@@ -19,6 +20,8 @@ export default async function Image({ params }: { params: { slug: string } }) {
     return notFound();
   }
 
+  const absoluteImageUrl = BASE_URL + post.posterImage.url;
+
   return new ImageResponse(
     (
       <div
@@ -32,7 +35,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
           justifyContent: "center",
         }}
       >
-        <img src={post.posterImage.url} alt={post.title} />
+        <img src={absoluteImageUrl} alt={post.title} width={500} height={500} />
       </div>
     ),
     {
