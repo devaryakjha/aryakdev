@@ -1,6 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-// [slug]/og.png/route.ts
-
 import { getAllPosts, getPostBySlug } from "@/lib/api";
 import { BASE_URL } from "@/lib/constants";
 import { notFound } from "next/navigation";
@@ -12,7 +10,7 @@ const size = {
 };
 
 export async function generateStaticParams() {
-  const posts = await getAllPosts();
+  const posts = getAllPosts();
 
   return posts.map((post) => ({
     slug: post.slug,
