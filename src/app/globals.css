@@ -15,7 +15,7 @@
 }
 
 @layer base {
-  :root {
+  :root:not([class*="dark"]) {
     --bg-color: #ffffff;
     --color-text-primary: #121212;
     --color-text-secondary: #2a2a2a;
