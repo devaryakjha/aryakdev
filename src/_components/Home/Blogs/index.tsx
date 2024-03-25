@@ -24,7 +24,7 @@ export default async function Blogs() {
                 <Typography.Special className={styles.index}>
                   {"0" + (index + 1)}
                 </Typography.Special>
-                <Typography.Heading className={styles.cardTitle}>
+                <Typography.Heading className={styles.cardTitle} size="h2">
                   {blog.shortTitle}
                 </Typography.Heading>
                 <div className={styles.date}>
