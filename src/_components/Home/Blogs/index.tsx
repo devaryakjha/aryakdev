@@ -6,7 +6,7 @@ import { formatDate } from "@/lib/date";
 import Typography from "@/ui/Typography";
 import Link from "next/link";
 
-export default async function Blogs() {
+export default function Blogs() {
   const blogs = getAllPosts();
   return (
     <section className={styles.blogs} id="blogs">
@@ -19,7 +19,7 @@ export default async function Blogs() {
         <GradientBlur />
         <div className={styles.bloggrid}>
           {blogs.map((blog, index) => (
-            <Link href={`/blog/${blog.slug}`} key={blog.slug} replace>
+            <Link href={`/blog/${blog.slug}`} key={blog.slug}>
               <div className={styles.card}>
                 <Typography.Special className={styles.index}>
                   {"0" + (index + 1)}

@@ -4,6 +4,7 @@ import { Project } from "@/utils/projects";
 import Body from "@/ui/Typography/Body";
 import Image from "next/image";
 import clsx from "clsx";
+import Link from "next/link";
 
 export default function ProjectCard(project: Project) {
   return (
@@ -12,7 +13,7 @@ export default function ProjectCard(project: Project) {
         <Heading size="h2">{project.title}</Heading>
         <Body className={styles.description}>{project.description}</Body>
       </div>
-      <a href={project.github} target="_blank" rel="noopener noreferrer">
+      <Link href={project.github} target="_blank" rel="noopener noreferrer">
         <div
           className={clsx(styles.base, "group")}
           style={{ backgroundColor: project.color }}
@@ -20,11 +21,12 @@ export default function ProjectCard(project: Project) {
           <Image
             src={project.image}
             alt={project.title}
-            fill
+            width={500}
+            height={500}
             className="group-hover:scale-110"
           />
         </div>
-      </a>
+      </Link>
     </div>
   );
 }
