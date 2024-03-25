@@ -21,8 +21,7 @@ export default function ProjectCard(project: Project) {
           <Image
             src={project.image}
             alt={project.title}
-            width={500}
-            height={500}
+            fill
             className="group-hover:scale-110"
           />
         </div>
