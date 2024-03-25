@@ -3,7 +3,6 @@ import SectionTitle from "@/_components/Home/SectionTitle";
 import GradientBlur from "@/_components/Home/GradientBlur";
 import { getAllPosts } from "@/lib/api";
 import { formatDate } from "@/lib/date";
-import clsx from "clsx";
 import Typography from "@/ui/Typography";
 import Link from "next/link";
 
@@ -20,7 +19,7 @@ export default async function Blogs() {
         <GradientBlur />
         <div className={styles.bloggrid}>
           {blogs.map((blog, index) => (
-            <Link href={`/blog/${blog.slug}`} key={blog.slug}>
+            <Link href={`/blog/${blog.slug}`} key={blog.slug} replace>
               <div className={styles.card}>
                 <Typography.Special className={styles.index}>
                   {"0" + (index + 1)}
@@ -32,7 +31,7 @@ export default async function Blogs() {
                   <Typography.Caption>
                     {formatDate(blog.date)}
                   </Typography.Caption>
-                  <a>Read More</a>
+                  <span className={styles.link}>Read More</span>
                 </div>
               </div>
             </Link>

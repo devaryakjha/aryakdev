@@ -31,6 +31,6 @@
   @apply flex gap-12;
 }
 
-.date > a {
+.link {
   @apply underline text-link;
 }
