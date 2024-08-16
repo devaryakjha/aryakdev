@@ -23,6 +23,10 @@
     {
       "source": "/collaborate-tube/:match*",
       "destination": "https://collaborate-tube-backend.vercel.app/:match*"
+    },
+    {
+      "source": "/flutter/html_to_flutter",
+      "destination": "https://html-to-flutter.vercel.app/"
     }
   ]
 }
