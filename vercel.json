@@ -27,6 +27,10 @@
     {
       "source": "/flutter/html_to_flutter",
       "destination": "https://html-to-flutter.vercel.app/"
+    },
+    {
+      "source": "/flutter/html_to_flutter/:match*",
+      "destination": "https://html-to-flutter.vercel.app/:match*"
     }
   ]
 }
