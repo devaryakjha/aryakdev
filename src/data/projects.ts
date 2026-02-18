@@ -59,7 +59,7 @@ export const projects: Project[] = [
     summary:
       "A Flutter package that turns HTML input into configurable Flutter widgets for product teams building rich content surfaces.",
     description:
-      "Popular Flutter package (20 stars) that parses HTML strings and maps them into configurable Flutter widgets.",
+      "Popular Flutter package that parses HTML strings and maps them into configurable Flutter widgets.",
     status: "Maintained",
     stack: ["Dart", "Flutter", "HTML parsing", "Package tooling"],
     problem:

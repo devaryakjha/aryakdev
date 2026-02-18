@@ -1,9 +1,5 @@
 ---
 import ThemeToggle from "./ThemeToggle.astro";
-
-const { path } = Astro.props as { path?: string };
-const pathname = path ?? "/";
-const isBlog = pathname === "/blog" || pathname.startsWith("/blog/");
 ---
 
 <header class="site-header">
@@ -20,9 +16,7 @@ const isBlog = pathname === "/blog" || pathname.startsWith("/blog/");
     </a>
     <div class="nav-right">
       <a class="nav-link" href="/#projects">Projects</a>
-      <a class="nav-link" href="/blog" aria-current={isBlog ? "page" : undefined}
-        >Blog</a
-      >
+      <a class="nav-link" href="/#blog">Blog</a>
       <ThemeToggle />
     </div>
   </nav>
