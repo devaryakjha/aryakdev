@@ -1,28 +1,24 @@
 ---
+import { Image } from "astro:assets";
 import ThemeToggle from "./ThemeToggle.astro";
-
-const { path } = Astro.props as { path?: string };
-const pathname = path ?? "/";
-const isBlog = pathname === "/blog" || pathname.startsWith("/blog/");
+import { logo } from "../utils/image-assets";
 ---
 
 <header class="site-header">
   <nav class="nav container" aria-label="Primary">
     <a class="logo" href="/" aria-label="Home">
-      <img
-        src="/images/logo.png"
-        width="40"
-        height="40"
+      <Image
+        src={logo}
         alt="Aryak.dev"
+        width={40}
+        height={40}
         decoding="async"
         draggable="false"
       />
     </a>
     <div class="nav-right">
       <a class="nav-link" href="/#projects">Projects</a>
-      <a class="nav-link" href="/blog" aria-current={isBlog ? "page" : undefined}
-        >Blog</a
-      >
+      <a class="nav-link" href="/#blog">Blog</a>
       <ThemeToggle />
     </div>
   </nav>

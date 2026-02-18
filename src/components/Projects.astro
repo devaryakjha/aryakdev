@@ -1,5 +1,7 @@
 ---
+import { Image } from "astro:assets";
 import { projects } from "../data/projects";
+import { getProjectImageAsset } from "../utils/image-assets";
 ---
 
 <section id="projects" class="section" data-cv>
@@ -11,32 +13,40 @@ import { projects } from "../data/projects";
   <ul class="grid">
     {projects.map((p) => (
       <li>
-        <a
-          class="card project-card"
-          href={p.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={`--accent: ${p.color};`}
-        >
-          <div class="project-meta">
-            <h3 class="card-title project-title-row">
-              <span>{p.title}</span>
-              {p.active ? <span class="project-badge">Active</span> : null}
-            </h3>
-            <p class="card-desc">{p.description}</p>
-            <span class="card-cta">Open</span>
+        <article class="card project-card" style={`--accent: ${p.color};`}>
+          <a class="project-main-link" href={p.links.details}>
+            <div class="project-meta">
+              <h3 class="card-title project-title-row">
+                <span>{p.title}</span>
+                {p.active ? <span class="project-badge">Active</span> : null}
+              </h3>
+              <p class="card-desc">{p.description}</p>
+            </div>
+            <div class="project-media">
+              <Image
+                src={getProjectImageAsset(p.image)}
+                alt={p.title}
+                loading="lazy"
+                decoding="async"
+                widths={[320, 480, 640]}
+                sizes="(max-width: 900px) 100vw, 33vw"
+              />
+            </div>
+          </a>
+          <div class="project-actions">
+            <a class="card-cta" href={p.links.details}>Details</a>
+            {p.links.github ? (
+              <a
+                class="card-cta"
+                href={p.links.github}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
+              </a>
+            ) : null}
           </div>
-          <div class="project-media">
-            <img
-              src={p.image}
-              width="630"
-              height="630"
-              alt={p.title}
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-        </a>
+        </article>
       </li>
     ))}
   </ul>

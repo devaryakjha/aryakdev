@@ -1,0 +1,96 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { site } from "../../data/site";
+import { getProjectBySlug, projects } from "../../data/projects";
+import { getProjectImageAsset } from "../../utils/image-assets";
+
+export function getStaticPaths() {
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+  }));
+}
+
+const slug = Astro.params.slug as string;
+const project = getProjectBySlug(slug);
+
+if (!project) {
+  return Astro.redirect("/404");
+}
+
+const title = `${project.title} | Projects | ${site.name}`;
+const description = project.summary;
+const canonical = `/projects/${slug}`;
+const projectImageAsset = getProjectImageAsset(project.image);
+
+const links = [
+  { label: "Website", url: project.links.live },
+  { label: "GitHub", url: project.links.github },
+  { label: "Docs", url: project.links.docs },
+  { label: "Package", url: project.links.package },
+].filter((link): link is { label: string; url: string } => Boolean(link.url));
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  ogImage={project.image}
+  twitterImage={project.image}
+  keywords={[project.title, ...project.stack]}
+>
+  <div class="project-layout">
+    <aside class="project-aside">
+      <a class="back-link" href="/#projects">← Projects</a>
+      <h1 class="project-page-title">{project.title}</h1>
+      <p class="project-page-meta">{project.status}</p>
+      <p class="project-page-summary">{project.summary}</p>
+
+      <ul class="tag-row">
+        {project.stack.map((tag) => (
+          <li class="tag">{tag}</li>
+        ))}
+      </ul>
+
+      {links.length ? (
+        <div class="aside-links">
+          {links.map((link) => (
+            <a href={link.url} target="_blank" rel="noopener noreferrer">{link.label}</a>
+          ))}
+        </div>
+      ) : null}
+    </aside>
+
+    <article class="project-article">
+      <div class="project-hero-media">
+        <Image
+          src={projectImageAsset}
+          alt={`${project.title} preview`}
+          loading="eager"
+          decoding="async"
+          widths={[960, 1280, 1600]}
+          sizes="(max-width: 900px) 100vw, 70vw"
+        />
+      </div>
+
+      <div class="prose project-prose">
+        <h2>Overview</h2>
+        <p>{project.description}</p>
+
+        <h2>Problem</h2>
+        <p>{project.problem}</p>
+
+        <h2>Approach</h2>
+        <p>{project.solution}</p>
+
+        <h2>Highlights</h2>
+        <ul>
+          {project.highlights.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </div>
+    </article>
+  </div>
+</BaseLayout>
