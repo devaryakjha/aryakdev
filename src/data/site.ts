@@ -1,6 +1,6 @@
 export const site = {
   name: "Aryakumar Jha",
-  role: "Software Engineer · Tech @ Zerodha",
+  role: "Software Engineer",
   location: "Bangalore, India",
   url: "https://aryak.dev",
   description:
