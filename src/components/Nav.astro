@@ -1,0 +1,29 @@
+---
+import ThemeToggle from "./ThemeToggle.astro";
+
+const { path } = Astro.props as { path?: string };
+const pathname = path ?? "/";
+const isBlog = pathname === "/blog" || pathname.startsWith("/blog/");
+---
+
+<header class="site-header">
+  <nav class="nav container" aria-label="Primary">
+    <a class="logo" href="/" aria-label="Home">
+      <img
+        src="/images/logo.png"
+        width="44"
+        height="44"
+        alt="Aryak.dev"
+        decoding="async"
+        draggable="false"
+      />
+    </a>
+    <div class="nav-right">
+      <a class="nav-link" href="/#projects">Projects</a>
+      <a class="nav-link" href="/blog" aria-current={isBlog ? "page" : undefined}
+        >Blog</a
+      >
+      <ThemeToggle />
+    </div>
+  </nav>
+</header>

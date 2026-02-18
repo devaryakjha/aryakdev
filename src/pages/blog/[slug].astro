@@ -1,0 +1,82 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { formatDate } from "../../utils/date";
+import { getAllPosts, splitTags } from "../../utils/blog";
+import { site } from "../../data/site";
+
+export function getStaticPaths() {
+  return getAllPosts().map((post) => ({ params: { slug: post.slug } }));
+}
+
+const slug = Astro.params.slug as string;
+const post = getAllPosts().find((p) => p.slug === slug);
+
+if (!post) {
+  return Astro.redirect("/404");
+}
+
+const fm = post.frontmatter;
+const title = `${fm.title} | ${site.name}`;
+const description = fm.excerpt ?? site.description;
+const tags = splitTags(fm.tags);
+const canonical = `/blog/${slug}`;
+const ogImage = `/blog/${slug}/og.png`;
+const twitterImage = `/blog/${slug}/twitter.png`;
+const posterUrl = fm.posterImage?.url;
+const posterBg = fm.posterImage?.bgColor ?? "#0b0d10";
+const Content = post.Content;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  ogImage={ogImage}
+  twitterImage={twitterImage}
+  keywords={tags.length ? tags : undefined}
+>
+  <div class="blog-layout">
+    <aside class="blog-aside">
+      <a class="back-link" href="/blog">← Blog</a>
+      <h1 class="blog-title">{fm.title}</h1>
+      <p class="blog-meta">
+        <time datetime={fm.date}>{formatDate(fm.date)}</time>
+        {fm.author?.name ? <span>· {fm.author.name}</span> : null}
+      </p>
+      {tags.length ? (
+        <ul class="tag-row">
+          {tags.map((t) => (
+            <li class="tag">{t}</li>
+          ))}
+        </ul>
+      ) : null}
+      <div class="aside-links">
+        <a href="/#projects">Projects</a>
+        <a href="https://www.instagram.com/wizardlydev" target="_blank" rel="noopener noreferrer">
+          Instagram
+        </a>
+        <a href="mailto:me@aryak.dev">Email</a>
+      </div>
+    </aside>
+
+    <article class="blog-article">
+      {posterUrl ? (
+        <div class="poster" style={`--poster-bg: ${posterBg};`}>
+          <img
+            src={posterUrl}
+            width="600"
+            height="600"
+            alt={fm.title}
+            loading="eager"
+            decoding="async"
+          />
+        </div>
+      ) : null}
+
+      <div class="prose">
+        <Content />
+      </div>
+    </article>
+  </div>
+</BaseLayout>

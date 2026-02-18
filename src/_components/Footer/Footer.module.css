@@ -1,7 +1,0 @@
-.footer {
-  @apply min-h-[150px] lg:min-h-[350px] py-[2rem] lg:py-[8rem] flex flex-col justify-center items-center gap-4 lg:gap-6;
-}
-
-.socials {
-  @apply flex gap-4 justify-center items-center;
-}

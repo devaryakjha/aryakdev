@@ -13,6 +13,10 @@
 /.next/
 /out/
 
+# astro
+/dist/
+/.astro/
+
 # production
 /build
 
@@ -27,6 +31,11 @@ yarn-error.log*
 
 # local env files
 .env*.local
+
+# lockfiles from other package managers (project uses Bun)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
 
 # vercel
 .vercel
