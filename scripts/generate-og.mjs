@@ -29,22 +29,11 @@ async function generateOne({ slug, posterUrl, bgColor }) {
     throw new Error(`Missing poster for ${slug}: ${posterPath}`);
   }
 
-  const posterBuf = await sharp(posterPath)
-    .resize(500, 500, { fit: "contain", background: { r: 0, g: 0, b: 0, alpha: 0 } })
-    .png()
-    .toBuffer();
-
   async function render(size, outPath) {
-    const left = Math.round((size.width - 500) / 2);
-    const top = Math.round((size.height - 500) / 2);
-    const img = sharp({
-      create: {
-        width: size.width,
-        height: size.height,
-        channels: 4,
-        background: bgColor || "#0b0d10",
-      },
-    }).composite([{ input: posterBuf, left, top }]);
+    const img = sharp(posterPath).resize(size.width, size.height, {
+      fit: "contain",
+      background: bgColor || "#0b0d10",
+    });
 
     await fs.mkdir(path.dirname(outPath), { recursive: true });
     await img.png().toFile(outPath);
@@ -72,4 +61,3 @@ async function main() {
 }
 
 await main();
-
