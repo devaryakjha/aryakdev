@@ -37,3 +37,11 @@ Suggested settings:
 - Node version: `20`
 
 Redirects live in `public/_redirects`.
+
+Deploy with Wrangler:
+
+```bash
+make deploy PROJECT=<pages-project-name>
+# optional preview branch deploy
+make deploy PROJECT=<pages-project-name> BRANCH=<branch-name>
+```
