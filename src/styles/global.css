@@ -538,11 +538,18 @@ html.dark .icon-moon {
 .project-card {
   position: relative;
   display: grid;
+  gap: 14px;
+  overflow: hidden;
+  padding-top: 22px; /* room for the accent stripe without changing border widths */
+}
+
+.project-main-link {
+  display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   gap: 14px;
   align-items: center;
-  overflow: hidden;
-  padding-top: 22px; /* room for the accent stripe without changing border widths */
+  text-decoration: none;
+  color: inherit;
 }
 
 .project-card::before {
@@ -558,7 +565,7 @@ html.dark .icon-moon {
 }
 
 @media (max-width: 900px) {
-  .project-card {
+  .project-main-link {
     grid-template-columns: 1fr;
   }
 }
@@ -595,8 +602,13 @@ html.dark .icon-moon {
     color var(--t) var(--ease);
 }
 
-.project-meta .card-cta {
-  margin-top: 14px;
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  border-top: 1px dashed color-mix(in srgb, var(--border), transparent 10%);
+  padding-top: 12px;
 }
 
 .project-media {
@@ -620,7 +632,7 @@ html.dark .icon-moon {
   transition: transform var(--t) var(--ease);
 }
 
-.project-card:hover .project-media img {
+.project-main-link:hover .project-media img {
   transform: scale(1.03);
 }
 
@@ -674,6 +686,82 @@ html.dark .icon-moon {
   .blog-layout {
     grid-template-columns: 1fr;
   }
+}
+
+.project-layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1.6fr;
+  gap: 22px;
+  padding: 26px 0 40px;
+}
+
+@media (max-width: 900px) {
+  .project-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.project-aside {
+  position: sticky;
+  top: 80px;
+  align-self: start;
+  padding: 18px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  z-index: 1;
+}
+
+@media (max-width: 900px) {
+  .project-aside {
+    position: relative;
+    top: 0;
+  }
+}
+
+.project-page-title {
+  margin: 0;
+  font-family: "Fraunces", ui-serif, Georgia, serif;
+  font-weight: 650;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  font-size: 28px;
+}
+
+.project-page-meta {
+  margin: 10px 0 0;
+  color: var(--muted-2);
+  font-size: 13px;
+}
+
+.project-page-summary {
+  margin: 12px 0 0;
+  color: var(--muted);
+  line-height: 1.55;
+  font-size: 14px;
+}
+
+.project-article {
+  min-width: 0;
+}
+
+.project-hero-media {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  overflow: hidden;
+  margin-bottom: 18px;
+  aspect-ratio: 16 / 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .blog-aside {

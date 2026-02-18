@@ -2,6 +2,7 @@ export const prerender = true;
 
 import type { APIRoute } from "astro";
 import { getAllPosts } from "../utils/blog";
+import { projects } from "../data/projects";
 
 function xmlEscape(s: string) {
   return s
@@ -15,11 +16,13 @@ function xmlEscape(s: string) {
 export const GET: APIRoute = () => {
   const base = (import.meta.env.SITE ?? "https://aryak.dev").replace(/\/$/, "");
   const posts = getAllPosts();
+  const projectPages = projects.map((project) => `${base}/projects/${project.slug}`);
   const now = new Date().toISOString();
 
   const urls = [
     { loc: `${base}/`, lastmod: now },
     { loc: `${base}/blog`, lastmod: now },
+    ...projectPages.map((loc) => ({ loc, lastmod: now })),
     ...posts.map((p) => ({
       loc: `${base}/blog/${p.slug}`,
       lastmod: new Date(p.frontmatter.date).toISOString(),
@@ -43,4 +46,3 @@ export const GET: APIRoute = () => {
     headers: { "Content-Type": "application/xml; charset=utf-8" },
   });
 };
-
