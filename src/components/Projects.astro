@@ -1,5 +1,7 @@
 ---
+import { Image } from "astro:assets";
 import { projects } from "../data/projects";
+import { getProjectImageAsset } from "../utils/image-assets";
 ---
 
 <section id="projects" class="section" data-cv>
@@ -21,13 +23,13 @@ import { projects } from "../data/projects";
               <p class="card-desc">{p.description}</p>
             </div>
             <div class="project-media">
-              <img
-                src={p.image}
-                width="630"
-                height="630"
+              <Image
+                src={getProjectImageAsset(p.image)}
                 alt={p.title}
                 loading="lazy"
                 decoding="async"
+                widths={[320, 480, 640]}
+                sizes="(max-width: 900px) 100vw, 33vw"
               />
             </div>
           </a>

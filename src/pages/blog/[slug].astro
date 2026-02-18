@@ -4,6 +4,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import { formatDate } from "../../utils/date";
 import { getAllPosts, splitTags } from "../../utils/blog";
 import { site } from "../../data/site";
+import { getBlogPosterAsset } from "../../utils/image-assets";
 
 export function getStaticPaths() {
   return getAllPosts().map((post) => ({ params: { slug: post.slug } }));
@@ -26,15 +27,7 @@ const twitterImage = `/blog/${slug}/twitter.png`;
 const posterUrl = fm.posterImage?.url;
 const posterBg = fm.posterImage?.bgColor ?? "#0b0d10";
 const posterFit = fm.posterImage?.fit ?? "contain";
-const posterName = posterUrl?.split("/").pop();
-const posterAssets = import.meta.glob("../../assets/blogs/*.{png,jpg,jpeg,webp,avif}", {
-  eager: true,
-  import: "default",
-});
-const posterAssetEntry = posterName
-  ? Object.entries(posterAssets).find(([path]) => path.endsWith(`/${posterName}`))
-  : undefined;
-const posterAsset = posterAssetEntry?.[1] ?? null;
+const posterAsset = posterUrl ? getBlogPosterAsset(posterUrl) : null;
 const Content = post.Content;
 ---
 
@@ -71,25 +64,14 @@ const Content = post.Content;
     <article class="blog-article">
       {posterUrl ? (
         <div class={`poster poster-${posterFit}`} style={`--poster-bg: ${posterBg};`}>
-          {posterAsset ? (
-            <Image
-              src={posterAsset}
-              alt={fm.title}
-              loading="eager"
-              decoding="async"
-              widths={[720, 960, 1200, 1440]}
-              sizes="(max-width: 900px) 100vw, 70vw"
-            />
-          ) : (
-            <img
-              src={posterUrl}
-              width={posterFit === "cover" ? 1440 : 600}
-              height={posterFit === "cover" ? 900 : 600}
-              alt={fm.title}
-              loading="eager"
-              decoding="async"
-            />
-          )}
+          <Image
+            src={posterAsset}
+            alt={fm.title}
+            loading="eager"
+            decoding="async"
+            widths={[720, 960, 1200, 1440]}
+            sizes="(max-width: 900px) 100vw, 70vw"
+          />
         </div>
       ) : null}
 

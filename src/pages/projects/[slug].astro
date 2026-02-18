@@ -1,7 +1,9 @@
 ---
+import { Image } from "astro:assets";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { site } from "../../data/site";
 import { getProjectBySlug, projects } from "../../data/projects";
+import { getProjectImageAsset } from "../../utils/image-assets";
 
 export function getStaticPaths() {
   return projects.map((project) => ({
@@ -19,6 +21,7 @@ if (!project) {
 const title = `${project.title} | Projects | ${site.name}`;
 const description = project.summary;
 const canonical = `/projects/${slug}`;
+const projectImageAsset = getProjectImageAsset(project.image);
 
 const links = [
   { label: "Website", url: project.links.live },
@@ -61,13 +64,13 @@ const links = [
 
     <article class="project-article">
       <div class="project-hero-media">
-        <img
-          src={project.image}
-          width="1260"
-          height="720"
+        <Image
+          src={projectImageAsset}
           alt={`${project.title} preview`}
           loading="eager"
           decoding="async"
+          widths={[960, 1280, 1600]}
+          sizes="(max-width: 900px) 100vw, 70vw"
         />
       </div>
 
