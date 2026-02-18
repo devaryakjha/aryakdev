@@ -1,0 +1,115 @@
+---
+import "../styles/global.css";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import { site } from "../data/site";
+
+type Props = {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  ogType?: "website" | "article";
+  ogImage?: string;
+  twitterImage?: string;
+  keywords?: string[];
+};
+
+const {
+  title,
+  description = site.description,
+  canonical,
+  ogType = "website",
+  ogImage,
+  twitterImage,
+  keywords = site.keywords as unknown as string[],
+} = Astro.props as Props;
+
+const canonicalUrl = new URL(canonical ?? Astro.url.pathname, site.url).toString();
+const ogImageAbs = ogImage ? new URL(ogImage, site.url).toString() : undefined;
+const twitterImageAbs = twitterImage
+  ? new URL(twitterImage, site.url).toString()
+  : ogImageAbs;
+const computedTitle = title ? title : `${site.name} - ${site.role}`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords.join(", ")} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" href="/favicon.ico" />
+    <meta
+      name="theme-color"
+      content="#f8f5ee"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#0d0f14"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link
+      rel="preload"
+      href="/fonts/fraunces-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/atkinson-latin-400.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/atkinson-latin-700.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:title" content={computedTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:locale" content="en_IN" />
+    {ogImageAbs ? <meta property="og:image" content={ogImageAbs} /> : null}
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={computedTitle} />
+    <meta name="twitter:description" content={description} />
+    {twitterImageAbs ? <meta name="twitter:image" content={twitterImageAbs} /> : null}
+
+    <title>{computedTitle}</title>
+
+    <script is:inline>
+      {`
+(() => {
+  try {
+    const stored = localStorage.getItem("theme");
+    const prefersDark =
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const theme = stored || (prefersDark ? "dark" : "light");
+    document.documentElement.classList.toggle("dark", theme === "dark");
+  } catch {}
+})();
+      `}
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+    <Nav path={Astro.url.pathname} />
+    <main id="content" class="container">
+      <slot />
+    </main>
+    <Footer />
+    <script defer src="/scripts/theme.js"></script>
+  </body>
+</html>

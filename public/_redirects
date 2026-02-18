@@ -1,0 +1,9 @@
+/shrtm https://url-shortener-devaryakjha.vercel.app/ 301
+/shrtm/* https://url-shortener-devaryakjha.vercel.app/:splat 301
+/collaborate-tube https://collaborate-tube-backend.vercel.app/ 301
+/collaborate-tube/* https://collaborate-tube-backend.vercel.app/:splat 301
+/flutter/html_to_flutter https://html-to-flutter.vercel.app/ 301
+/flutter/html_to_flutter/* https://html-to-flutter.vercel.app/:splat 301
+/api/varanasi https://varanasi-backend.vercel.app/ 308
+/api/varanasi/* https://varanasi-backend.vercel.app/:splat 308
+

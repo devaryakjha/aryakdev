@@ -1,0 +1,39 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getAllPosts } from "../../utils/blog";
+import { formatDate } from "../../utils/date";
+
+const posts = getAllPosts();
+---
+
+<BaseLayout title="Blog | Aryakumar Jha" canonical="/blog" ogType="website">
+  <header class="page-head">
+    <h1 class="page-title">Blog</h1>
+    <p class="page-subtitle">
+      Short essays, project notes, and things worth remembering.
+    </p>
+  </header>
+
+  <ul class="grid blog-grid" data-cv>
+    {posts.map((post) => (
+      <li>
+        <a class="card blog-card" href={`/blog/${post.slug}`}>
+          <div class="blog-main">
+            <h2 class="card-title">
+              {post.frontmatter.shortTitle ?? post.frontmatter.title}
+            </h2>
+            {post.frontmatter.excerpt ? (
+              <p class="card-desc">{post.frontmatter.excerpt}</p>
+            ) : null}
+            <div class="meta-row">
+              <time class="meta" datetime={post.frontmatter.date}>
+                {formatDate(post.frontmatter.date)}
+              </time>
+              <span class="card-cta">Read</span>
+            </div>
+          </div>
+        </a>
+      </li>
+    ))}
+  </ul>
+</BaseLayout>

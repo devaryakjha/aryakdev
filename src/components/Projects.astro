@@ -1,0 +1,43 @@
+---
+import { projects } from "../data/projects";
+---
+
+<section id="projects" class="section" data-cv>
+  <header class="section-head">
+    <h2 class="section-title">Projects</h2>
+    <p class="section-subtitle">A few things I’ve built recently.</p>
+  </header>
+
+  <ul class="grid">
+    {projects.map((p) => (
+      <li>
+        <a
+          class="card project-card"
+          href={p.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={`--accent: ${p.color};`}
+        >
+          <div class="project-meta">
+            <h3 class="card-title project-title-row">
+              <span>{p.title}</span>
+              {p.active ? <span class="project-badge">Active</span> : null}
+            </h3>
+            <p class="card-desc">{p.description}</p>
+            <span class="card-cta">Open</span>
+          </div>
+          <div class="project-media">
+            <img
+              src={p.image}
+              width="630"
+              height="630"
+              alt={p.title}
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </a>
+      </li>
+    ))}
+  </ul>
+</section>
