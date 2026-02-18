@@ -5,44 +5,46 @@ export type Project = {
   image: string;
   href: string;
   color: string;
+  active?: boolean;
 };
 
 export const projects: Project[] = [
   {
     id: 1,
-    title: "Cipher Forge",
+    title: "oore.build",
     description:
-      "Generate secure and strong passwords effortlessly with CipherForge. A free password generator to keep your accounts protected.",
-    image: "/images/projects/cipher_forge.webp",
-    href: "https://cipher-forge.aryak.dev",
-    color: "#666597",
+      "Self-hosted, Flutter-first mobile CI and internal app distribution platform focused on faster release pipelines.",
+    image: "/images/projects/oore.build.webp",
+    href: "https://demo.oore.build",
+    color: "#3b82f6",
+    active: true,
   },
   {
     id: 2,
-    title: "Project Varanasi",
+    title: "Tagflow",
     description:
-      "A work-in-progress music streaming app built with Flutter for iOS, Android, and macOS (Beta). UI inspired by Spotify mobile.",
-    image: "/images/projects/varanasi.webp",
-    href: "https://github.com/devaryakjha/varanasi",
-    color: "#C38D4F",
+      "Popular Flutter package (20 stars) that parses HTML strings and maps them into configurable Flutter widgets.",
+    image: "/images/projects/tagflow.webp",
+    href: "https://github.com/devaryakjha/tagflow",
+    color: "#f59e0b",
+    active: true,
   },
   {
     id: 3,
-    title: "Dictionary",
+    title: "jellyfin-dart",
     description:
-      "Cross-platform dictionary app with pronunciation audio, part-of-speech support, and offline audio caching for faster learning.",
-    image: "/images/projects/dictionary.webp",
-    href: "https://github.com/devaryakjha/dictionary",
-    color: "#999AC6",
+      "Type-safe, auto-generated Dart client for Jellyfin API v10.11.0, designed for comprehensive Flutter and Dart integration.",
+    image: "/images/projects/jellyfin-dart.webp",
+    href: "https://github.com/devaryakjha/jellyfin-dart",
+    color: "#14b8a6",
   },
   {
     id: 4,
-    title: "BMI Calculator",
+    title: "anpec",
     description:
-      "Flutter BMI calculator with a visual chart for ranges (underweight → obese) and an explanation of the formula and method.",
-    image: "/images/projects/bmi_calculator.webp",
-    href: "https://github.com/devaryakjha/bmi_calculator",
-    color: "#78A1BB",
+      "Android performance classification plugin for Flutter, useful for capability-aware feature flags and runtime tuning.",
+    image: "/images/projects/anpec.webp",
+    href: "https://github.com/devaryakjha/anpec",
+    color: "#8b5cf6",
   },
 ];
-

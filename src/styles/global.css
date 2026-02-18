@@ -567,6 +567,34 @@ html.dark .icon-moon {
   min-width: 0;
 }
 
+.project-title-row {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.project-badge {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--fg), var(--accent) 24%);
+  border: 1px solid color-mix(in srgb, var(--accent), var(--border) 46%);
+  background: color-mix(in srgb, var(--accent), transparent 88%);
+  border-radius: 999px;
+  padding: 4px 8px;
+  line-height: 1;
+  transition:
+    border-color var(--t) var(--ease),
+    background-color var(--t) var(--ease),
+    color var(--t) var(--ease);
+}
+
 .project-meta .card-cta {
   margin-top: 14px;
 }
@@ -845,46 +873,54 @@ html.dark .icon-moon {
   margin: 0;
   padding: 0;
   list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 14px;
-  align-items: baseline;
+  display: grid;
+  gap: 0;
+  width: min(100%, 460px);
+  border-top: 1px solid var(--border);
 }
 
 .footer-link {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 8px;
+  border-bottom: 1px solid var(--border);
 }
 
 .footer-link a {
-  display: inline-flex;
-  align-items: center;
-  padding: 6px 10px;
-  border-radius: 999px;
-  border: 1px solid transparent; /* keep box size stable on hover */
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
   text-decoration: none;
   color: var(--fg);
   background-color: transparent;
   transition:
-    background-color var(--t) var(--ease),
-    border-color var(--t) var(--ease),
-    color var(--t) var(--ease);
+    color var(--t) var(--ease),
+    opacity var(--t) var(--ease);
 }
 
 .footer-link a:hover {
-  background-color: var(--surface-2);
-  border-color: var(--border);
+  opacity: 0.88;
+}
+
+.footer-link-name {
+  font-size: 18px;
+  font-family: "Fraunces", ui-serif, Georgia, serif;
+  letter-spacing: -0.01em;
+  color: var(--fg);
 }
 
 .footer-link-hint {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--muted-2);
 }
 
 @media (max-width: 520px) {
   .nav {
     padding: 8px 0;
+  }
+  .footer-link a {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
   }
 }
 
