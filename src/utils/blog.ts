@@ -4,7 +4,7 @@ export type BlogFrontmatter = {
   title: string;
   shortTitle?: string;
   date: string;
-  posterImage?: { url: string; bgColor?: string };
+  posterImage?: { url: string; bgColor?: string; fit?: "contain" | "cover" };
   tags?: string;
   author?: { name?: string; bio?: string; picture?: string };
   ogImage?: { url: string };
@@ -58,4 +58,3 @@ export function splitTags(tags?: string) {
     .map((t) => t.trim())
     .filter(Boolean);
 }
-

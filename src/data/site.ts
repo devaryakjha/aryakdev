@@ -1,18 +1,20 @@
 export const site = {
   name: "Aryakumar Jha",
   role: "Software Engineer",
-  location: "India",
+  location: "Bangalore, India",
   url: "https://aryak.dev",
   description:
-    "Portfolio and writing by Aryakumar Jha. I build mobile and web products with Flutter, React, and Node.js.",
+    "Portfolio and writing by Aryakumar Jha. Tech at Zerodha, building Flutter tooling, CI systems, and high-performance product interfaces.",
   keywords: [
     "Aryakumar Jha",
     "Software Engineer",
+    "Zerodha",
     "Portfolio",
     "Mobile App Development",
     "Web Development",
     "Flutter",
     "React",
+    "Rust",
     "Node.js",
     "Golang",
     "Python",

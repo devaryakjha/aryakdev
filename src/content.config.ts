@@ -12,6 +12,7 @@ const blog = defineCollection({
       .object({
         url: z.string(),
         bgColor: z.string().optional(),
+        fit: z.enum(["contain", "cover"]).optional(),
       })
       .optional(),
     tags: z.string().optional(),
@@ -31,4 +32,3 @@ const blog = defineCollection({
 });
 
 export const collections = { blog };
-
