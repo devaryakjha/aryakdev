@@ -824,7 +824,7 @@ html.dark .icon-moon {
   padding-left: 22px;
 }
 
-.prose code {
+.prose :where(:not(pre) > code) {
   font-family:
     ui-monospace,
     SFMono-Regular,
@@ -841,36 +841,12 @@ html.dark .icon-moon {
   padding: 0.15em 0.35em;
 }
 
-.prose pre {
-  position: relative;
+.prose > pre {
   overflow: auto;
-  padding: 40px 14px 14px;
+  padding: 14px;
   border-radius: 16px;
   border: 1px solid var(--border);
   background: var(--surface-2);
-}
-
-.code-copy-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  border: 1px solid var(--border);
-  background: var(--surface);
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1;
-  padding: 6px 8px;
-  border-radius: 999px;
-  cursor: pointer;
-  transition:
-    border-color var(--t) var(--ease),
-    color var(--t) var(--ease),
-    background-color var(--t) var(--ease);
-}
-
-.code-copy-btn:hover {
-  color: var(--fg);
-  border-color: color-mix(in srgb, var(--link), transparent 35%);
 }
 
 .footer {
