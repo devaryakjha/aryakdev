@@ -20,15 +20,9 @@ export const site = {
   socials: [
     { name: "Email", url: "mailto:me@aryak.dev", label: "me@aryak.dev" },
     {
-      name: "Instagram",
-      url: "https://www.instagram.com/wizardlydev",
-      label: "@wizardlydev",
-    },
-    {
       name: "LinkedIn",
       url: "https://www.linkedin.com/in/devaryakjha",
       label: "devaryakjha",
     },
   ],
 } as const;
-
