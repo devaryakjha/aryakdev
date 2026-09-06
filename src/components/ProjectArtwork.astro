@@ -1,0 +1,83 @@
+---
+type Props = { kind: string };
+const { kind } = Astro.props;
+---
+<div class:list={['art', 'art-grid', 'grid-artwork', `grid-artwork-${kind}`]} data-artwork={kind} aria-hidden="true">
+  {kind === 'oore-build' && <>
+    <div class="oore-route">
+      <svg viewBox="0 0 400 270" fill="none">
+        <circle cx="200" cy="125" r="92" stroke="#393939" stroke-dasharray="2 7" />
+        <circle cx="200" cy="125" r="71" stroke="#242424" />
+        <path d="M42 200h38l41-41M278 87l33-32h46M271 187l25 26h61" stroke="#686868" />
+        <circle cx="42" cy="200" r="4" fill="#ddd" />
+        <rect x="350" y="48" width="12" height="12" rx="2" stroke="#ddd" />
+        <rect x="350" y="207" width="12" height="12" rx="2" stroke="#ddd" />
+        <g fill="#8f8f8f" font-size="9" font-family="monospace"><text x="29" y="225">commit</text><text x="315" y="37">artifact</text><text x="302" y="240">release</text></g>
+      </svg>
+      <img class="oore-original" src="/grid/oore.svg" width="90" height="90" alt="" />
+    </div>
+    <div class="grid-art-caption"><span>Oore CI</span><span>Your Mac → your release</span></div>
+  </>}
+  {kind === 'tagflow' && <>
+    <svg class="tagflow-document" viewBox="0 0 400 270" fill="none">
+      <path d="M46 77h106v117H46z" fill="#101010" stroke="#454545" />
+      <path d="M57 63h106v117" stroke="#2d2d2d" />
+      <g fill="#aaa" font-family="monospace" font-size="11"><text x="62" y="102">&lt;article&gt;</text><text x="69" y="128">&lt;h1&gt;</text><text x="69" y="150">&lt;p&gt;</text><text x="62" y="175">&lt;/article&gt;</text></g>
+      <path d="M164 137h38m-5-4 5 4-5 4" stroke="#aaa" />
+      <rect x="216" y="55" width="139" height="160" rx="5" fill="#1b1b1b" stroke="#666" />
+      <rect x="227" y="67" width="116" height="6" fill="#292929" />
+      <text x="231" y="113" fill="#ddd" font-size="16" font-family="Arial,sans-serif">Hello, Flutter.</text>
+      <path d="M231 130h105M231 140h105M231 150h73" stroke="#666" stroke-width="2" />
+      <rect x="231" y="171" width="30" height="25" rx="3" stroke="#555" /><rect x="269" y="171" width="67" height="25" rx="3" stroke="#555" />
+    </svg>
+    <div class="grid-art-caption"><span class="art-brand"><img src="/grid/tagflow.svg" width="24" height="24" alt="" />Tagflow</span><span>HTML → native widgets</span></div>
+  </>}
+  {kind === 'bonsai' && <>
+    <div class="bonsai-topology">
+      <div class="bonsai-lanes"><span>feature</span><span>main</span><span>worktree</span></div>
+      <img src="/grid/bonsai.svg" width="205" height="205" alt="" />
+      <span class="bonsai-root">One repository. Room to branch.</span>
+    </div>
+    <div class="grid-art-caption"><span>Bonsai</span><span>Native Git for macOS</span></div>
+  </>}
+  {kind === 'loadwright' && <>
+    <svg class="loadwright-spec" viewBox="0 0 400 270" fill="none">
+      <rect x="34" y="52" width="113" height="149" rx="2" fill="#141414" stroke="#555" />
+      <path d="M34 76h113" stroke="#393939" />
+      <g font-family="monospace" font-size="10"><text x="47" y="67" fill="#c5c5c5">spec.yaml</text><text x="46" y="100" fill="#aaa">test:</text><text x="55" y="123" fill="#666">scenario:</text><text x="65" y="143" fill="#aaa">requests</text><text x="55" y="167" fill="#666">load:</text><text x="65" y="187" fill="#aaa">ramp-up</text></g>
+      <path d="M153 127h32m-5-4 5 4-5 4M203 72v131h165" stroke="#555" />
+      <path d="M204 104h162M204 137h162M204 170h162" stroke="#252525" stroke-dasharray="2 4" />
+      <path d="m205 190 19-4 16-29 16 10 17-51 17 17 17-56 19 18 16-9 20-25" stroke="#d1d1d1" stroke-width="1.5" />
+      <path d="m205 194 34-10 21-18 26 8 20-30 22 10 33-23" stroke="#666" stroke-width="1.5" />
+      <g fill="#888" font-size="9" font-family="monospace"><text x="203" y="58">request load</text><text x="304" y="225">time →</text></g>
+    </svg>
+    <div class="grid-art-caption"><span>Loadwright</span><span>Readable specs. Real load.</span></div>
+  </>}
+  {kind === 'anpec' && <>
+    <svg class="anpec-device" viewBox="0 0 400 270" fill="none">
+      <rect x="68" y="28" width="113" height="208" rx="16" fill="#121212" stroke="#777" />
+      <rect x="75" y="35" width="99" height="193" rx="10" stroke="#303030" />
+      <path d="M110 43h29M111 218h28" stroke="#666" stroke-linecap="round" />
+      <rect x="102" y="99" width="46" height="49" rx="2" stroke="#bbb" /><rect x="111" y="108" width="28" height="31" stroke="#555" />
+      {[0,1,2,3].map(i=><g stroke="#777"><path d={`M${111+i*9} 91v8M${111+i*9} 148v8M94 ${108+i*10}h8M148 ${108+i*10}h8`} /></g>)}
+      <path d="M181 126h30m0-59v117M211 67h21M211 125h21M211 184h21" stroke="#505050" />
+      <g font-size="10" font-family="monospace" fill="#aaa"><text x="242" y="60">low</text><text x="242" y="118">average</text><text x="242" y="177">high</text></g>
+      <g fill="#777"><rect x="242" y="72" width="19" height="10" /><rect x="242" y="130" width="19" height="10" /><rect x="266" y="130" width="19" height="10" /><rect x="242" y="189" width="19" height="10" /><rect x="266" y="189" width="19" height="10" /><rect x="290" y="189" width="19" height="10" /></g>
+    </svg>
+    <div class="grid-art-caption"><span>Anpec</span><span>Know the hardware.</span></div>
+  </>}
+  {kind === 'seisei' && <>
+    <svg class="seisei-contract" viewBox="0 0 400 270" fill="none">
+      <g stroke="#444"><path d="M34 87h32l25 25h36M38 155h34l19-20h36M44 189h25l40-41h18"/><circle cx="31" cy="87" r="3"/><circle cx="35" cy="155" r="3"/><circle cx="41" cy="189" r="3"/></g>
+      <rect x="127" y="65" width="113" height="131" rx="3" fill="#151515" stroke="#777" />
+      <path d="M141 55h111v131" stroke="#333" />
+      <text x="144" y="145" fill="#ddd" font-size="46" font-family="monospace" letter-spacing="-7">{'{T}'}</text>
+      <text x="144" y="182" fill="#777" font-size="9" font-family="monospace">schema</text>
+      <path d="M241 130h35m-5-4 5 4-5 4" stroke="#999" />
+      <rect x="287" y="99" width="77" height="62" rx="3" stroke="#888" />
+      <path d="m300 122 5 5 9-11M320 122h29M300 141h49" stroke="#aaa" />
+      <g font-size="9" font-family="monospace" fill="#888"><text x="26" y="221">model output</text><text x="288" y="183">typed data</text></g>
+    </svg>
+    <div class="grid-art-caption"><span>Seisei</span><span>A contract for AI output.</span></div>
+  </>}
+</div>

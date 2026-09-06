@@ -1,13 +1,9 @@
 export type BlogFrontmatter = {
-  ogTitle?: string;
   excerpt?: string;
   title: string;
   shortTitle?: string;
   date: string;
-  posterImage?: { url: string; bgColor?: string; fit?: "contain" | "cover" };
   tags?: string;
-  author?: { name?: string; bio?: string; picture?: string };
-  ogImage?: { url: string };
 };
 
 type MarkdownModule = {
@@ -45,16 +41,4 @@ const ALL_POSTS: BlogPost[] = Object.entries(modules)
 
 export function getAllPosts() {
   return ALL_POSTS;
-}
-
-export function getPostBySlug(slug: string) {
-  return ALL_POSTS.find((p) => p.slug === slug) ?? null;
-}
-
-export function splitTags(tags?: string) {
-  if (!tags) return [];
-  return tags
-    .split(",")
-    .map((t) => t.trim())
-    .filter(Boolean);
 }

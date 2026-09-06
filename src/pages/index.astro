@@ -1,13 +1,5 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import Hero from "../components/Hero.astro";
-import Projects from "../components/Projects.astro";
-import BlogTeasers from "../components/BlogTeasers.astro";
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Home from '../components/Home.astro';
 ---
-
-<BaseLayout canonical="/">
-  <Hero />
-  <Projects />
-  <BlogTeasers />
-</BaseLayout>
-
+<SiteLayout><Home /></SiteLayout>
