@@ -275,6 +275,8 @@ img,svg { max-width: 100%; display: block; }
  :root[data-theme="light"] .theme-toggle svg { transform: rotate(180deg); }
  .theme-toggle:focus-visible svg,.site-header nav a:focus-visible::after,.footer-email:focus-visible span::after { transition: none; }
  @media (hover: hover) and (pointer: fine) {
+  .portrait-peel { transition: transform 320ms cubic-bezier(.23,1,.32,1); transform-origin: 50% 65%; }
+  .portrait-sticker:enabled[aria-pressed="false"]:is(:hover,[data-dragging]):not(:focus-visible) .portrait-peel { transform: translateY(-4px) rotate(-2deg) scale(1.025); }
   .grid-button:hover > span { transform: translateY(3px); }
   .grid-projects article:has(a:hover) .small-label > span,.grid-post:hover > b,.journal-list > a:hover > span,.header-email:hover > span { transform: translate(3px,-3px); }
   .grid-art-link:hover .grid-artwork > :is(svg,.oore-route,.bonsai-topology) { transform: translateY(-3px) scale(1.025); }
