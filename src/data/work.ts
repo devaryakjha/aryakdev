@@ -38,6 +38,25 @@ export const work = [
     ]
   },
   {
+    "slug": "gpuicn",
+    "name": "gpuicn",
+    "short": "Native UI. Source included.",
+    "description": "Open-code components for Rust and GPUI. Add the source to your app, then shape the details to fit your interface.",
+    "category": "Component library",
+    "language": "Rust / GPUI",
+    "state": "Beta",
+    "href": "https://ui.imajha.com",
+    "source": "https://github.com/devaryakjha/gpuicn",
+    "problem": "Native app interfaces need familiar controls, but a fixed component API can make small design changes hard to own.",
+    "solution": "gpuicn brings the shadcn/ui approach to GPUI: editable component source, built on BaseGPUI, with idiomatic Rust APIs and themes.",
+    "highlights": [
+      "37 component families with editable source",
+      "Real GPUI previews in the browser through WASM and WebGPU",
+      "Component examples and API references generated from Rust source",
+      "Lucide icons through gpui-icons"
+    ]
+  },
+  {
     "slug": "bonsai",
     "name": "Bonsai",
     "short": "A native home for your Git work.",
@@ -53,24 +72,6 @@ export const work = [
       "Native macOS interface",
       "Rust and GPUI",
       "Open-source development"
-    ]
-  },
-  {
-    "slug": "loadwright",
-    "name": "Loadwright",
-    "short": "Load tests you can read.",
-    "description": "A Go CLI for running JMeter load tests from readable YAML specifications.",
-    "category": "Command-line tool",
-    "language": "Go",
-    "state": "Open source",
-    "href": "https://github.com/devaryakjha/loadwright",
-    "source": "https://github.com/devaryakjha/loadwright",
-    "problem": "Load-test configuration can be difficult to read and maintain alongside application code.",
-    "solution": "Loadwright provides a YAML-based workflow for running JMeter load tests from a Go command-line tool.",
-    "highlights": [
-      "Readable YAML specifications",
-      "JMeter-based load tests",
-      "Command-line workflow"
     ]
   },
   {
