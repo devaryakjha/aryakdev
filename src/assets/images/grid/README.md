@@ -4,6 +4,12 @@
 redraw of the supplied avatar at `/Users/arya/projects/devaryakjha/avatar.png`.
 Astro creates responsive WebP variants. The original avatar stays unchanged.
 
+The interactive portrait uses `public/grid/portrait-mask.svg` to follow the
+head outline without changing this raster. Regenerate the mask with
+`bun scripts/trace-portrait-mask.mjs`; it traces the original white contour,
+keeps enclosed black hair opaque, and excludes the exterior background. The same mask shapes the folded
+backing. Black hair stays opaque in both themes.
+
 ## Final portrait prompt
 
 Preserve the exact simple friendly face, swept black hair, rectangular glasses,

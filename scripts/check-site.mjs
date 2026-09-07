@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import sharp from 'sharp';
+import vm from 'node:vm';
 
 // Run after bun run build.
 const root = path.resolve('dist');
@@ -32,7 +33,36 @@ for (const image of socialImages) {
 const icon = await sharp(path.join(root, 'apple-touch-icon.png')).metadata();
 assert.deepEqual([icon.width, icon.height], [180, 180], 'Home-screen icon dimensions');
 const home = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
-assert.ok(!home.includes('<script'), 'No homepage JavaScript');
+// Exercise the real theme script with system preferences and unavailable storage.
+const themeScript = fs.readFileSync('src/scripts/theme.js', 'utf8');
+for (const [saved, dark, blocked, expected] of [[null, false, false, 'light'], [null, true, false, 'dark'], ['light', true, false, 'light'], ['dark', false, false, 'dark'], ['invalid', false, false, 'light'], [null, true, true, 'dark']]) {
+  const root = { dataset: {} };
+  const button = { hidden: true, setAttribute(_, value) { this.label = value; }, addEventListener(_, listener) { this.click = listener; } };
+  const system = { matches: dark, addEventListener(_, listener) { this.change = listener; } };
+  const meta = {};
+  let ready, stored;
+  vm.runInNewContext(themeScript, {
+    document: { documentElement: root, querySelector: () => button, querySelectorAll: () => [meta], addEventListener(_, listener) { ready = listener; } },
+    matchMedia: () => system,
+    localStorage: { getItem() { if (blocked) throw Error('Blocked'); return saved; }, setItem(_, value) { if (blocked) throw Error('Blocked'); stored = value; } },
+  });
+  assert.equal(root.dataset.theme, expected, 'Theme applies before page content');
+  ready();
+  assert.equal(button.hidden, false);
+  system.matches = !dark;
+  system.change();
+  const followsSystem = saved !== 'light' && saved !== 'dark';
+  assert.equal(root.dataset.theme, followsSystem ? (dark ? 'light' : 'dark') : expected);
+  const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+  button.click();
+  assert.equal(root.dataset.theme, next, 'Toggle works even without storage');
+  assert.equal(button.label, `Switch to ${next === 'dark' ? 'light' : 'dark'} mode`);
+  assert.equal(meta.content, next === 'dark' ? '#080808' : '#faf9f6');
+  if (!blocked) assert.equal(stored, next, 'Saves explicit choice');
+  system.matches = dark;
+  system.change();
+  assert.equal(root.dataset.theme, next, 'Explicit choice overrides system changes');
+}
 assert.equal(new Set([...home.matchAll(/data-artwork="([^"]+)"/g)].map(m => m[1])).size, 6, 'Six distinct project artworks');
 const sitemap = fs.readFileSync(path.join(root, 'sitemap-0.xml'), 'utf8');
 assert.ok(!sitemap.includes('/explore/'), 'No preview URLs in sitemap');
