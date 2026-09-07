@@ -9,10 +9,6 @@
 # testing
 /coverage
 
-# next.js
-/.next/
-/out/
-
 # astro
 /dist/
 /.astro/
@@ -42,6 +38,5 @@ pnpm-lock.yaml
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
 
 certificates

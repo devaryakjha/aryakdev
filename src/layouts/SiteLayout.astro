@@ -1,0 +1,46 @@
+---
+import '../styles/site.css';
+import themeScript from '../scripts/theme.js?raw';
+import { site } from '../data/site';
+type Props = { title?: string; description?: string; ogType?: 'website' | 'article'; ogImage?: string; imageAlt?: string };
+const { title = 'Aryakumar Jha — Software Engineer', description = site.description, ogType = 'website', ogImage = '/og.png', imageAlt = title } = Astro.props;
+const socialImage = new URL(ogImage, site.url);
+const canonical = new URL(Astro.url.pathname, site.url);
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  <meta name="theme-color" content="#faf9f6" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#080808" media="(prefers-color-scheme: dark)" />
+  <script is:inline set:html={themeScript} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:type" content={ogType} />
+  <meta property="og:image" content={socialImage} />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content={imageAlt} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={socialImage} />
+  <meta name="twitter:image:alt" content={imageAlt} />
+  <meta property="og:site_name" content={site.name} />
+  <title>{title}</title><link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+</head>
+<body class="grid">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="identity" href="/" aria-label="Aryakumar Jha, home"><span class="monogram" aria-hidden="true">aj</span><span class="identity-name">Aryakumar Jha</span></a>
+    <nav aria-label="Portfolio"><a href="/#work">Work</a><a href="/blog">Writing</a><a href="/#about">About</a><a class="header-email" href="mailto:me@aryak.dev">Let’s talk <span aria-hidden="true">↗</span></a><button class="theme-toggle" type="button" aria-label="Switch color theme" hidden><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="7" stroke="currentColor" /><path d="M10 3a7 7 0 0 1 0 14Z" fill="currentColor" /></svg></button></nav>
+  </header>
+  <main id="main"><slot /></main>
+  <footer class="site-footer"><a class="footer-email" href="mailto:me@aryak.dev">Have a thought?<br /><span>Say hello.</span></a><div><p>Thanks for spending a little time here.</p><a href="https://github.com/devaryakjha">GitHub ↗</a><a href="https://www.linkedin.com/in/devaryakjha">LinkedIn ↗</a><p class="copyright">© {new Date().getFullYear()} Aryakumar Jha · Bangalore, India</p></div></footer>
+</body>
+</html>

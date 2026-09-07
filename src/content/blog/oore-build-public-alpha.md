@@ -1,20 +1,9 @@
 ---
-ogTitle: "Oore CI Is Public Alpha"
 excerpt: "I built Oore CI for my own Flutter release workflow, and I am now opening it up in public alpha for anyone dealing with similar mobile CI pain."
 title: "Oore CI Is Public Alpha"
 shortTitle: "Oore CI Alpha"
 date: "2026-02-18T08:35:00.000Z"
-posterImage:
-  url: "/assets/blogs/oore-build-public-alpha.png"
-  bgColor: "#0b0d10"
-  fit: "cover"
 tags: "Oore CI, Flutter, CI/CD, Mobile DevOps, Rust, Self-hosted"
-author:
-  name: "Aryakumar Jha"
-  bio: "Software Engineer"
-  picture: "/images/logo.png"
-ogImage:
-  url: "/assets/blogs/oore-build-public-alpha.png"
 ---
 
 I’m opening **Oore CI** in **public alpha** today.

@@ -9,6 +9,7 @@ export default defineConfig({
     sitemap(),
     astroExpressiveCode({
       themes: ["github-dark", "github-light"],
+      themeCssSelector: (theme) => `[data-theme="${theme.type}"]`,
       frames: {
         showCopyToClipboardButton: true,
       },
